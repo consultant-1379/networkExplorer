@@ -1,0 +1,15 @@
+{
+    "dependencies": {
+        "cdt-build": "*",
+        "cdt-package": "*"
+    },
+    "devDependencies": {
+        "eslint": "^5.5.0",
+        "request": "^2.81.0"
+    },
+    "scripts": {
+        "test": "cdt2 build --proxy http://www-proxy.lmera.ericsson.se:8080 --use-external-phantomjs",
+        "lint": "./node_modules/.bin/eslint -c ../.eslintrc.js \"src/**/*.js\" \"test/**/*.js\"",
+        "lint-fix": "npm run lint -- --fix"
+    }
+}

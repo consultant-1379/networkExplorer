@@ -1,0 +1,74 @@
+version: "2.1"
+
+services:
+
+  # Image containing PostgreSQL Database Server used by Service Framework
+  postgres:
+    container_name: netex_postgres
+    image: armdocker.rnd.ericsson.se/proj_oss_releases/enm/postgres
+    hostname: postgresql-server
+
+  # Image containing OpenDJ (LDAP Server) and all openidm policies
+  opendj:
+    container_name: netex_opendj
+    image: armdocker.rnd.ericsson.se/proj_oss_releases/enm/access-control
+    volumes:
+      - ./NetworkExplorer/testsuite/docker/opendj:/docker-entrypoint-init.d:ro
+
+  # Image containing DPS, the Model Repo and data for testing
+  dps:
+    container_name: netex_dps
+    image: armdocker.rnd.ericsson.se/proj_oss_releases/enm/dps-prepopulated:latest
+    volumes:
+      - /etc/opt/ericsson/ERICmodeldeployment/data
+      - /etc/opt/ericsson/ERICmodeldeployment/models
+      - /opt/ericsson/ERICdpsupgrade/egt/output
+    hostname: db1-service
+
+  # Image containing JBoss AS server and service group RPMs
+  jboss:
+    container_name: netex_jboss
+    build: NetworkExplorer/testsuite/docker/jboss
+    links:
+      - dps:db1-service
+      - postgres:postgresql-server
+      - opendj:ldap-remote
+      - opendj:ldap-local
+    volumes_from:
+      - dps
+      - opendj
+    volumes:
+      - ./NetworkExplorer/testsuite/docker/jboss/config:/opt/ericsson/docker/config
+      - /ericsson/tor/data/apps
+    environment:
+      - JAVA_OPTS=-Xms512m -Xmx2g -XX:PermSize=256m -XX:MaxPermSize=768m -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -Ddps_ignore_mediation=true -Djboss.as.management.blocking.timeout=600
+    ports:
+      - "8080:8080" # Service (http)
+      - "8787:8787" # Debugger
+      - "9990:9990" # Jboss Console (http)
+      - "9999:9999" # Jboss native API
+
+  # Image containing Netex UI packages & Client Tools
+  ui:
+    container_name: netex_ui
+    build: NetworkExplorer
+    ports:
+      - "8585:8585" # cdt serve
+    depends_on:
+      jboss:
+        condition: service_healthy
+    volumes_from:
+      - jboss:rw
+
+  # Selenium node for Arquillian Drone
+  selenium:
+    container_name: netex_selenium
+    image: selenium/standalone-firefox-debug:latest
+    environment:
+      - VNC_NO_PASSWORD=1
+    ports:
+      - "4444:4444" # Webdriver (http)
+      - "5999:5900" # VNC (standard port 5900 is remapped to 5999 to reduce chance of conflicts)
+    depends_on:
+      ui:
+        condition: service_healthy

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><task xmlns:xsa3="http://dita.oasis-open.org/architecture/2005/" id="MyApp-MyTask">
+  <title>Create and Favorite a Saved Search</title>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>A search query has been executed in Network Explorer.</li>
+        <li>The <b>Save Search</b> button is displayed.</li>
+      </ul>
+    </prereq>
+    <context>
+      <p>
+        <b>Objective</b>
+      </p>
+      <p>To create and favorite a new Saved Search.</p>
+    </context>
+
+    <steps>
+
+      <step id="1">
+        <cmd>Create a Saved Search</cmd>
+        <info>
+          <ol>
+            <li>In the Network Explorer main pages, click <b>Save Search</b>. The Save Search panel is displayed.</li>
+            <li>Enter Saved Search name. The Saved Search name can only contain alphanumeric characters (A-Z, a-z and 0-9), spaces and certain "special" characters. The supported "special" characters are:  . - _ </li>
+            <li>Choose Sharing Permissions. Saved Searches can be saved as public or private.</li>
+            <li>Click <b>Save</b> to save the search. The new Saved Search is displayed in the Saved Searches Tab under Network Panel.</li>
+          </ol>
+        </info>
+      </step>
+
+      <step id="2">
+        <cmd>Favorite a Saved Search</cmd>
+        <info>
+          <ol>
+            <li>Clicking on a Saved Search in the Saved Searches Tab, will display the Saved Search details and populate the results table</li>
+            <li>Click the <image href="../resources/images/star_black_16px.svg"/>. The star color changes to gold <image href="../resources/images/star_yellow_16px.svg"/>. This saved search is now displayed as a favorite search.</li>
+          </ol>
+          <p>Note : Refresh Network Explorer for latest Information in Network Panel.</p>
+        </info>
+      </step>
+
+    </steps>
+    <result>
+      <p>The Search is saved and displayed as a favorite.</p>
+    </result>
+  </taskbody>
+</task>
+

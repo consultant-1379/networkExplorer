@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="NetworkExplorer-Overview">
+    <title>Overview</title>
+    <conbody>
+        <section>
+            <p>
+                Network Explorer allows you to search through objects using a flexible, user-friendly search
+                syntax.
+            </p>
+            <p>
+                The key features of Network Explorer are:
+            </p>
+            <ul>
+                <li>
+                    Searching and retrieving network objects.
+                </li>
+                <li>
+                    Saving collections of objects (Collections) or your search query (Saved Searches) with a
+                    desired name, in order to view it at a later time.
+                </li>
+                <li>
+                    Using search results in other applications. Some applications can be launched directly from
+                    Network Explorer. Other applications can use Network Explorer to search for and return search results.
+                </li>
+                <li>
+                    Each search result, Collection and Saved Search in Network Explorer has a unique URL. This allows
+                    it to be bookmarked and shared. Your Collections and Saved Searches will need to be public in order
+                    to share with others.
+                </li>
+            </ul>
+        </section>
+    </conbody>
+</concept>

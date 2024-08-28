@@ -1,0 +1,41 @@
+<concept id="NetworkExplorer-returnAllAttributesOfAManagedObject">
+    <title>Returning All Attributes of a Managed Object</title>
+    <conbody>
+        <section>
+            <p>
+                To return all attributes of a managed object, "<b>with all attr</b>" can be used.
+            </p>
+            <p>
+                For example - to search MeContext and return all its attributes in result set:
+            </p>
+            <codeblock>
+                select object type MeContext with all attr
+            </codeblock>
+            <p>
+                Alternatively, it is also possible to use the shorthand syntax:
+            </p>
+            <codeblock>
+                MeContext with all attr
+            </codeblock>
+            <p>
+                When searching for multiple object types, it is possible that all the attribute columns in the results
+                will not apply to every object found. In this case, a dash (-) will appear in a shaded results cell in
+                order to distinguish it from a valid attribute with no specified value. For example, a search like:
+            </p>
+            <codeblock>
+                select object type MeContext with attr platformType, object type ManagedElement
+            </codeblock>
+            <p>
+                may return results like:
+            </p>
+
+            <image href="../resources/images/attrDoesNotApply.png"/>
+
+            <p>
+                when type
+                <b>ManagedElement</b>
+                does not have the attribute <b>platformType</b>.
+            </p>
+        </section>
+    </conbody>
+</concept>

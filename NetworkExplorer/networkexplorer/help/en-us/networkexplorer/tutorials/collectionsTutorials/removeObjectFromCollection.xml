@@ -1,0 +1,53 @@
+<task id="NetworkExplorer-RemoveObjectFromCollection">
+    <title>Remove an Object from a Collection</title>
+    <taskbody>
+        <prereq>
+            <ul>
+                <li>
+                    You have appropriate access rights to modify a Collection. You can modify your public or
+                    private Collections. An Administrator can modify other user's public Collections. See
+                    <xref href="../../prerequisites.xml" type="concept">Prerequisites</xref> for user role details.
+                </li>
+                <li>
+                    A Collection (in context) is available.
+                </li>
+            </ul>
+        </prereq>
+        <context>
+            <p>
+                <b>Objective</b>
+            </p>
+            <p>
+                This tutorial describes how to remove a Managed Object(s) (MO) from a Collection.
+            </p>
+            <b>Outline</b>
+            <ol>
+                <li><xref type="task" href="#1">Select Required Managed Object(s)</xref></li>
+                <li><xref type="task" href="#2">Remove the Managed Object(s)</xref></li>
+            </ol>
+        </context>
+        <steps>
+            <step id="1">
+                <cmd>Select Required Managed Object(s) (MO)</cmd>
+                <info>
+                    <p>
+                        In the <b>Network Explorer Results Table</b>, select the MO(s) you want removed.
+                    </p>
+                </info>
+            </step>
+            <step id="2">
+                <cmd>Remove the Managed Object(s)</cmd>
+                <info>
+                    <p>
+                        Click the <b>Remove from this Collection</b> button in the <b>Action Bar</b>.
+                    </p>
+                </info>
+            </step>
+        </steps>
+        <result>
+            <p>
+                The required MO(s) are removed from the Collection.
+            </p>
+        </result>
+    </taskbody>
+</task>

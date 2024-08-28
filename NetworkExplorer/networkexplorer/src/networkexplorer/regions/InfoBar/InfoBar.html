@@ -1,0 +1,20 @@
+<div class="eaNetworkExplorer-rInfoBar">
+    <div class="ebLayout-SectionHeading">
+        {{! This h2 is shown when there is no specific collection information to display. Shown by default. }}
+        <h2 class="eaNetworkExplorer-rInfoBar-defaultHeader">{{ strings.search }}</h2>
+
+        {{! This h2 is shown when there IS specific collection information to display. Hidden by default. }}
+        <h2 class="eaNetworkExplorer-rInfoBar-info eaNetworkExplorer-rInfoBar-info_hidden">
+            &ldquo;<span class="eaNetworkExplorer-rInfoBar-infoName eaNetworkExplorer-rInfoBar-ellipsis">{{ strings.unsavedSearch }}</span>&rdquo;
+            <span class="eaNetworkExplorer-rInfoBar-infoTypeWrapper">
+                (<span class="eaNetworkExplorer-rInfoBar-infoType"></span>)
+            </span>
+            <i class="eaNetworkExplorer-rInfoBar-favoriteIcon ebIcon ebIcon_interactive ebIcon_star"></i>
+            <span class="eaNetworkExplorer-rInfoBar-separator eaNetworkExplorer-rInfoBar-separator_hidden"></span>
+            <button class="eaNetworkExplorer-rInfoBar-closeCollection eaNetworkExplorer-rInfoBar-closeCollection_hidden ebBtn">
+                <i class="eaNetworkExplorer-rInfoBar-closeCollection-icon ebIcon ebIcon_close"></i>
+                <span class="eaNetworkExplorer-rInfoBar-closeCollection-closeCollectionBtnText">{{ strings.closeCollection }}</span>
+            </button>
+        </h2>
+    </div>
+</div>

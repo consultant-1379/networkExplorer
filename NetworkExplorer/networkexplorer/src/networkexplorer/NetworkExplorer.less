@@ -1,0 +1,92 @@
+.eaNetworkExplorer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    &-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+    }
+
+    &-flexBox {
+        position: relative;
+    }
+
+    &-contentHolder, &-sidebarHolder {
+        position: absolute;
+    }
+
+    &-sidebarHolder {
+        left: 0;
+        top: 0;
+    }
+
+    &-contentHolder {
+        transition: left .3s ease-in-out;
+        left: 0;
+        top: 0;
+        right: 0;
+
+        &_positionWhenSlidingMenuClosed {
+            left: 40px;
+        }
+    }
+
+    &-header {
+        margin-bottom: 12px;
+    }
+
+    &-breadcrumbs {
+        margin: 14px 0;
+    }
+
+    &-objectActions {
+        display: none;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        line-height: 50px;
+        text-align: center;
+        // as part of the iPad workaround found in the main
+        // region, we need to give this action bar a z-index
+        z-index: 1;
+    }
+
+    &-loaderHolder {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .2);
+
+        &_hidden {
+            display: none;
+        }
+    }
+
+    &_actionPage {
+
+        .eaNetworkExplorer {
+
+            &-objectActions {
+                display: block;
+            }
+
+            &-header {
+                display: none;
+            }
+        }
+    }
+
+    &_shiftedUp {
+        padding-bottom: 50px;
+    }
+}

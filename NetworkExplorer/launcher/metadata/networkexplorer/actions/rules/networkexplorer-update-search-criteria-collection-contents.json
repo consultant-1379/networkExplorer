@@ -1,0 +1,10 @@
+{
+  "actionName": "networkexplorer-update-search-criteria-collection-contents",
+  "condition": {
+    "dataType": "Collection",
+    "properties": [{
+      "name": "subType",
+      "value": "SEARCH_CRITERIA"
+    }]
+  }
+}

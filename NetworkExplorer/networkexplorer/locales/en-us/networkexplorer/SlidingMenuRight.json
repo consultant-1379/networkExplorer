@@ -1,0 +1,10 @@
+{
+  "objectDeletedTitle" : "No attributes found",
+  "objectDeletedBody" : "The object you selected has been removed from ENM. Please select a different object",
+  "accessDeniedTitle" : "Access Denied",
+  "accessDeniedBody" : "Your role does not allow you to perform this operation. Contact your Security Administrator to change your access rights.",
+  "accessDeniedBodyTBAC" : "Your Target Based Access Control rights do not allow you to access this Managed Object. Contact your Security Administrator to change your access rights.",
+  "unknownServerErrorTitle" : "Unable to Retrieve Data",
+  "unknownServerErrorBody" : "The server encountered an internal error. Please try again later or contact your System Administrator.",
+  "attributeChangesSaved" : "Changes Saved"
+}

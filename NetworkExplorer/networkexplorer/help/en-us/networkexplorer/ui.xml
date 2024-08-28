@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="UserInterface">
+    <title>User Interface</title>
+    <conbody>
+        <section>
+            <title>User Interface</title>
+            <p><xref href="ui/search.xml" type="concept"> Searching in Network Explorer</xref></p>
+            <p><xref href="ui/results.xml" type="concept"> Results</xref></p>
+            <p><xref href="ui/criteriaBuilder.xml" type="concept"> Criteria Builder</xref></p>
+            <p><xref href="ui/collections.xml" type="concept"> Collections</xref></p>
+            <p><xref href="ui/savedSearches.xml" type="concept"> Saved Searches</xref></p>
+
+            <title>Search Syntax</title>
+            <p><xref href="ui/searchForManagedObjectsByNameSyntax.xml" type="concept"> Search MO by Name</xref></p>
+            <p><xref href="ui/searchForManagedObjectsByTypeSyntax.xml" type="concept"> Search MO by Type</xref></p>
+            <p><xref href="ui/searchForManagedObjectsByNodeSyntax.xml" type="concept"> Search MO by Node</xref></p>
+            <p><xref href="ui/searchForManagedObjectsInACollection.xml" type="concept"> Search MO in a Collection</xref></p>
+            <p><xref href="ui/searchForManagedObjectsUsingACollectionAsScope.xml" type="concept"> Search MO using a Collection</xref></p>
+            <p><xref href="ui/searchForManagedObjectsUsingAttributesAndComparators.xml" type="concept"> Search MO using Attributes and Comparators</xref></p>
+            <p><xref href="ui/searchForManagedObjectsWithAParent.xml" type="concept"> Search MO where a Managed Object has a Parent</xref></p>
+            <p><xref href="ui/searchForManagedObjectsWithAChild.xml" type="concept"> Search MO where a Managed Object has a Child</xref></p>
+            <p><xref href="ui/searchForManagedObjectsInASavedSearch.xml" type="concept"> Search MO in a Saved Search</xref></p>
+            <p><xref href="ui/searchForManagedObjectsInCollectionSavedSearchWithSpaces.xml" type="concept"> Search MO in a Saved Search or Collection with Spaces in the Name</xref></p>
+            <p><xref href="ui/searchForManagedObjectsUsingFilters.xml" type="concept"> Search for Managed Objects Using Filters</xref></p>
+            <p><xref href="ui/searchForSubNetworkManagedObjectTypes.xml" type="concept"> Search SubNetwork MO Types</xref></p>
+            <p><xref href="ui/returnAllAttributesOfAManagedObject.xml" type="concept"> Return all Attributes of a MO</xref></p>
+        </section>
+    </conbody>
+</concept>

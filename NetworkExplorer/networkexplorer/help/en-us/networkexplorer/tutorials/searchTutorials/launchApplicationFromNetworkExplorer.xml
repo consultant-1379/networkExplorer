@@ -1,0 +1,66 @@
+<task id="NetworkExplorer-LaunchActionFromSearchResults">
+    <title>Launch an Application from Network Explorer</title>
+    <taskbody>
+        <prereq>
+            <ul>
+                <li>
+                    You have appropriate access rights for your required actions.
+                </li>
+            </ul>
+        </prereq>
+        <context>
+            <p>
+                <b>Objective</b>
+            </p>
+            <p>
+                This tutorial describes the steps required to launch an application from Network Explorer.
+            </p>
+            <b>Outline</b>
+            <ol>
+                <li>
+                    <xref type="task" href="#1">Select Managed Object(s) (MOs) from the Results Table</xref>
+                </li>
+                <li>
+                    <xref type="task" href="#2">Launch application</xref>
+                </li>
+            </ol>
+        </context>
+        <steps>
+            <step id="1">
+                <cmd>Select Required Managed Object(s)</cmd>
+                <info>
+                    <ol>
+                        <li>Launch
+                            <xref href="#networkexplorer" scope="external">Network Explorer.</xref>
+                        </li>
+                        <li>
+                            Select required Managed Objects (MOs) from the <b>Results</b> table.
+                        </li>
+                        <li>
+                            Click the required row(s) to select required Managed Object(s) (MOs)
+                        </li>
+                    </ol>
+                    <p>
+                        <b>Note:</b>
+                        The actions displayed in the <b>Action Bar</b> depend on the number of MOs selected and
+                        their
+                        type.
+                    </p>
+                </info>
+            </step>
+            <step id="2">
+                <cmd>Launch Required Application</cmd>
+                <info>
+                    <p>
+                        Click the relevant action button to launch the required application.
+                    </p>
+                </info>
+            </step>
+        </steps>
+        <result>
+            <p>
+                The required application is launched with the selected MO(s) in context.
+            </p>
+        </result>
+    </taskbody>
+</task>

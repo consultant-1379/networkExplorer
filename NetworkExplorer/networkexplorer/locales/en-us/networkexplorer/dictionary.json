@@ -1,0 +1,122 @@
+{
+    "buttons": {
+        "editAttributes": "Edit Attributes",
+        "cancel": "Cancel",
+        "saveChanges": "Save Changes",
+        "ok": "OK",
+        "close": "Close",
+        "resume": "Resume",
+        "stop": "Stop",
+        "abort": "Abort"
+    },
+
+    "errors": {
+        "databaseUnavailable": {
+            "title": "Unable to Connect to Database",
+            "body": "Unable to establish a database connection. Please try again later."
+        },
+        "forbidden": {
+            "title": "Access Denied",
+            "body": "Your role does not allow you to perform this operation. Contact your Security Administrator to change your access rights."
+        },
+        "unauthorized": {
+            "title": "Unauthorized",
+            "body": "Your role does not allow you to access these attributes. Contact your Security Administrator to change your access rights."
+        },
+        "forbiddenTBAC": {
+            "title": "Access Denied",
+            "body": "Your Target Based Access Control rights do not allow you to access this Managed Object. Contact your System Administrator to change your access rights."
+        },
+        "persistentObjectError": {
+            "title": "Unable to Retrieve Data",
+            "body": "The server encountered an internal error. Please try again later."
+        },
+        "persistentObjectNotFound": {
+            "title": "Could not find requested object",
+            "body": "We cannot find the requested object. It may have been removed or is not available at this time. Please try again later."
+        },
+        "networkObjectNotFound": {
+            "title": "Could not find requested object",
+            "body": "We cannot find the requested object. It may have been removed or is not available at this time."
+        },
+        "nodeBusy": {
+            "title": "Node Busy",
+            "body": "Failed to retrieve Non-Persistent Attributes. Try again later."
+        },
+        "poidNotAvailable": {
+            "title": "Missing network object",
+            "body": "This network object is removed or not available."
+        },
+        "serviceUnavailable": {
+            "title": "Service Unavailable",
+            "body": "The service is currently unavailable. Please retry your request later. If the problem persists, contact your System Administrator."
+        },
+        "timeout": {
+            "title": "Timeout",
+            "body": "Request timed out."
+        },
+        "timeoutSave": {
+            "title": "Action in progress",
+            "body": "Save ongoing, please check later if it was successful."
+        },
+        "unknownServerError": {
+            "title": "Unknown server error",
+            "body": "There was an unknown server error",
+            "errorCode": -1,
+            "detail": ""
+        },
+        "initiateCmSyncSupervisionDisabled": {
+            "rawContentMarker" : "Please ensure that the active attribute in the CmNodeHeartbeatSupervision MO has been set to true",
+            "title": "Node supervision disabled",
+            "body": "Sync initiation failed, please check if supervision is active for the node."
+        },
+        "initiateCmSyncMediationServiceUnavailable": {
+            "rawContentMarker" : "No suitable Mediation Service registered for flow",
+            "title": "Service Unavailable",
+            "body": "The service is currently unavailable. Please retry your request later. If the problem persists, contact your System Administrator."
+        },
+        "collectionNotFound": {
+            "title": "Object Not Found",
+            "body": "Collection does not exist.",
+            "errorCode": 10007
+        },
+        "memoryProtectionDataRetrievalError": {
+            "title": "Unable to Retrieve Data",
+            "body": "There is currently no capacity to process the request due to a large amount of activity on the server. Please try again later."
+        },
+        "memoryProtectionLocateObjectError": {
+            "title" : "Unable to Locate Object",
+            "body": "There is currently no capacity to process the request due to a large amount of activity on the server. Please try again later."
+        },
+        "SyncErrorFound": {
+            "errorCode": 10021
+        },
+        "TransactionError": {
+            "errorCode": 1004
+        }
+    },
+
+    "actions": {
+        "InitiateCmSync": {
+            "confirmHeader": "Initiate Node Sync",
+            "confirmContent": "Are you sure you want to proceed?",
+            "sync": "Sync"
+        },
+        "EditState": {
+            "reviewChanges": "Review Changes",
+            "executeChanges": "Execute Changes"
+        },
+        "RemoveTopologyData": {
+            "defaultLabel": "Remove from Collection"
+        },
+        "MoveToCollection": {
+            "defaultLabel": "Move to Collection"
+        },
+        "processingRequest": "Processing Request"
+    },
+
+    "emptyCollectionError": {
+        "title": "Empty Collection",
+        "body": "The selected collection does not contain any nodes. Please select a different collection and try again."
+    }
+}

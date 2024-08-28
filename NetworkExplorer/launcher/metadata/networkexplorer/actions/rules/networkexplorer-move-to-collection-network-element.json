@@ -1,0 +1,10 @@
+{
+  "actionName": "networkexplorer-move-to-collection",
+  "condition": {
+    "dataType": "ManagedObject",
+    "properties": [{
+      "name": "type",
+      "value":"NetworkElement"
+    }]
+  }
+}

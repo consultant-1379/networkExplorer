@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="SavedSearchManagement-About">
+    <title>About</title>
+    <conbody>
+        <section>
+            <p>This page has been moved to a<xref scope="external" href="#help/app/savedsearchmanagement/topic/about" type="concept"> new location</xref></p>
+        </section>
+    </conbody>
+</concept>

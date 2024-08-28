@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.ericsson.nms.pres</groupId>
+  <artifactId>netex-functional-usat-testsuite</artifactId>
+  <name>Netex Functional USAT Testsuite</name>
+  <version>1.129.4-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <arquillian.drone.bom.version>2.5.0</arquillian.drone.bom.version>
+    <arquillian.graphene.version>2.3.2</arquillian.graphene.version>
+    <arquillian.bom.version>1.1.15.Final</arquillian.bom.version>
+    <arquillian.spock.extension.version>1.0.0</arquillian.spock.extension.version>
+    <arquillian-browser-screenshooter.version>2.3.2</arquillian-browser-screenshooter.version>
+    <restassured.version>3.0.6</restassured.version>
+    <groovy.version>2.4.8</groovy.version>
+    <spock.version>0.7-groovy-2.0</spock.version>
+    <version.failsafe.plugin>2.19.1</version.failsafe.plugin>
+    <browser.name>firefox</browser.name>
+    <driver.chrome.version>2.38</driver.chrome.version>
+    <driver.firefox.version>v0.19.0</driver.firefox.version>
+    <browser.chrome.config />
+    <browser.firefox.config />
+    <argLine>
+      -Darq.extension.webdriver.chromeArguments="--window-size=1920,1080 ${browser.chrome.config}"
+      -Darq.extension.webdriver.firefoxArguments="--window-size=1920,1080 ${browser.firefox.config}"
+    </argLine>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.jboss.arquillian</groupId>
+        <artifactId>arquillian-bom</artifactId>
+        <version>${arquillian.bom.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.arquillian.extension</groupId>
+        <artifactId>arquillian-drone-bom</artifactId>
+        <version>${arquillian.drone.bom.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jboss.arquillian.extension</groupId>
+      <artifactId>arquillian-drone-webdriver-depchain</artifactId>
+      <type>pom</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.graphene</groupId>
+      <artifactId>graphene-webdriver</artifactId>
+      <version>${arquillian.graphene.version}</version>
+      <type>pom</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.graphene</groupId>
+      <artifactId>arquillian-browser-screenshooter</artifactId>
+      <version>${arquillian-browser-screenshooter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.spock</groupId>
+      <artifactId>arquillian-spock-standalone</artifactId>
+      <version>${arquillian.spock.extension.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.spock</groupId>
+      <artifactId>arquillian-spock-core</artifactId>
+      <version>${arquillian.spock.extension.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.spock</groupId>
+      <artifactId>arquillian-spock-container</artifactId>
+      <version>${arquillian.spock.extension.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.spockframework</groupId>
+      <artifactId>spock-core</artifactId>
+      <version>${spock.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${restassured.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>${groovy.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.core</groupId>
+      <artifactId>arquillian-core-impl-base</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.test</groupId>
+      <artifactId>arquillian-test-impl-base</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+
+    <!-- =============================================================================  -->
+    <!-- Profiles for selecting browsers to be used in the User Story Acceptance Tests. -->
+    <!-- =============================================================================  -->
+
+    <profile>
+      <id>firefox</id>
+      <properties>
+        <browser.name>firefox</browser.name>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>chrome</id>
+      <properties>
+        <browser.name>chrome</browser.name>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>headless</id>
+      <properties>
+        <browser.chrome.config>--headless</browser.chrome.config>
+        <browser.firefox.config>-headless</browser.firefox.config>
+      </properties>
+    </profile>
+
+    <!-- =============================================================================  -->
+    <!-- Run the tests with the application already running locally, local browser.     -->
+    <!-- =============================================================================  -->
+
+    <profile>
+      <id>env-local</id>
+      <properties>
+        <app.url>http://localhost:8585</app.url>
+        <argLine>
+          -Darq.extension.webdriver.chromeDriverVersion=${driver.chrome.version}
+          -Darq.extension.webdriver.chromeArguments="--start-maximized ${browser.chrome.config}"
+          -Darq.extension.webdriver.firefoxDriverVersion=${driver.firefox.version}
+          -Darq.extension.webdriver.firefoxArguments="--start-maximized ${browser.firefox.config}"
+        </argLine>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- =============================================================================  -->
+    <!-- Starts the application and Selenium on Docker containers and run the tests.    -->
+    <!-- =============================================================================  -->
+
+    <profile>
+      <id>env-docker</id>
+      <properties>
+        <app.url>http://netex_ui:8585</app.url>
+        <argLine>
+          -Darq.extension.webdriver.remoteReusable=true
+          -Darq.extension.webdriver.remoteAddress=${selenium.url}
+        </argLine>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- =============================================================================  -->
+    <!-- Starts the Docker containers with the application and Selenium server.         -->
+    <!-- =============================================================================  -->
+
+    <profile>
+      <id>run-docker</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>docker-start</id>
+                <phase>pre-integration-test</phase>
+                <configuration>
+                  <target>
+                    <echo message="Application URL: ${app.url}" />
+                    <echo message="Selenium URL: ${selenium.url}" />
+                    <exec executable="docker-compose" dir="${basedir}/../../../">
+                      <arg value="up" />
+                      <arg value="-d" />
+                    </exec>
+                  </target>
+                </configuration>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>docker-stop</id>
+                <phase>post-integration-test</phase>
+                <configuration>
+                  <target>
+                    <exec executable="docker-compose" dir="${basedir}/../../../">
+                      <arg value="down" />
+                      <arg value="-v" />
+                    </exec>
+                  </target>
+                </configuration>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- =============================================================================  -->
+    <!-- Automatic profiles, activated by host system's operating system family.        -->
+    <!-- =============================================================================  -->
+
+    <profile>
+      <id>_os-windows</id>
+      <activation>
+        <os>
+          <family>dos</family>
+        </os>
+      </activation>
+      <properties>
+        <selenium.url>http://192.168.99.100:4444/wd/hub/</selenium.url>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>_os-linux</id>
+      <activation>
+        <os>
+          <family>Unix</family>
+        </os>
+      </activation>
+      <properties>
+        <selenium.url>http://localhost:4444/wd/hub/</selenium.url>
+      </properties>
+    </profile>
+
+  </profiles>
+
+  <build>
+
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+
+    <pluginManagement>
+      <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.3</version>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.12.4</version>
+          <configuration>
+            <skipTests>true</skipTests>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-pmd-plugin</artifactId>
+          <version>3.17.0</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>2.19.1</version>
+          <configuration>
+            <systemPropertyVariables>
+              <skipIntegration />
+            </systemPropertyVariables>
+            <includes>
+              <include>**/**/**/*Spec.*</include>
+            </includes>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>integration-test</goal>
+                <goal>verify</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.7</version>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+
+      <plugin>
+        <!-- This plugin is used to compile Groovy code. -->
+        <groupId>org.codehaus.gmavenplus</groupId>
+        <artifactId>gmavenplus-plugin</artifactId>
+        <version>1.5</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
+            <scope>runtime</scope>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <targetBytecode>${java.version}</targetBytecode>
+          <verbose>true</verbose>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+</project>

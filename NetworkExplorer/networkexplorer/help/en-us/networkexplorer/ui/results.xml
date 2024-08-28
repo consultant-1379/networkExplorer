@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="NetworkExplorer-UserInterface-Results">
+    <title>Results</title>
+    <conbody>
+        <section>
+            <title>Virtual Scrolling</title>
+            <p>
+                Results in Network Explorer are displayed in a table that uses Virtual Scrolling. With Virtual
+                Scrolling all of the result set is displayed in a single page. You can scroll through a large result
+                set using the scroll bar to the right of the results table. As the scroll bar is moved up or down the
+                visible row index range is displayed as a scroll bar annotation to make it easier to find the required results.
+                When a large request is executed the result rows are retrieved in stages. As you scroll through
+                the result set new requests are made to get content not yet been loaded.
+            </p>
+        </section>
+        <section>
+            <title>Sorting Search Results</title>
+            <p>
+                Results are initially sorted by Name. Results can be sorted manually by a chosen column.
+            </p>
+            <p>
+                Click the column heading you want to sort by. The results will be sorted by that heading, first in
+                ascending order. Click the heading again, to view the results in descending order.
+                Values are treated as alpha-numeric strings. This means ID11 would precede ID2.
+            </p>
+
+            <fig>
+                <title>
+                    For example - a selection of results from a search, sorted by Name, would produce the following order
+                    of the Name column
+                </title>
+                <image href="../resources/images/sortedTable.png"/>
+            </fig>
+
+            <p>
+                <b>Notes:</b>
+                <ul>
+                    <li>
+                        IP addresses are treated as text and not numbers. Therefore, they are not sorted in numerical order.
+                        For example, 170.110.65.95 precedes 170.70.65.95.
+                    </li>
+                    <li>
+                        Sorting on the "Sync Status (CM)" column when a node's sync state is in the process of a transition
+                        between "UNSYNCHRONIZED" and "SYNCHRONIZED" states may result in that node's sync state changing
+                        after the sort operation is complete.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Columns can be re-ordered by using the Table Settings. Table Settings is displayed by clicking the <b>Settings</b>
+                button above the results table, sliding out from the right of the screen over the table. The columns can
+                then be re-ordered by dragging the columns to the required order. Hide Table Settings by clicking the
+                right arrow button next to the Table Settings header.
+                The columns can be re-sized by dragging the right side of the desired column heading. The column widths are
+                persisted for that search, but reset to default when any new search is executed.
+            </p>
+        </section>
+        <section>
+            <title>MO Type</title>
+            <p>
+                Results shall display the MO instances with same name belonging to different parent MO classes. When hovered over
+                these MO instances a full tree structure up to that MO name is displayed in tooltip.
+            </p>
+            <image href="../resources/images/MOtype_tabletooltip.png" />
+        </section>
+        <section>
+            <title>Node Info</title>
+
+            <p>
+                This column displays a set of icons representing the synchronization status, maintenance mode and Radio Access Technologies of the node.
+            </p>
+
+            <b><u>Synchronization Status</u></b>
+            <p>
+                The synchronization status icon of managed objects such as MeContext, NetworkElement, and ManagedElements without MeContext is shown as <image href="../resources/images/syncError.svg"/>
+                when the node is Unsynchronized or <image href="../resources/images/syncing_Animated.svg"/> when the node is Synchronizing/Pending
+            </p>
+
+
+            <b><u>Maintenance Mode</u></b>
+            <p>
+                The <image href="../resources/images/maintenanceModeIcon.png"/> icon represents nodes undergoing maintenance.
+            </p>
+
+            <b><u>Radio Access Technology</u></b>
+            <p>The Network Element of type <b>RadioNode</b> can have attribute <b>radioAccessTechnology</b> with one or more 'Attribute Value(s)'.
+                Currently radioAccessTechnology can have one or more values from the list <b>[2G, 3G, 4G, 5G]</b>.</p>
+            <p>The icons <image href="../resources/images/2GIcon.svg"/>
+                <image href="../resources/images/3GIcon.svg"/>
+                <image href="../resources/images/4GIcon.svg"/>
+                <image href="../resources/images/5GIcon.svg"/>
+                represent the different radioAccessTechnology values that can be shown.
+            </p>
+
+            <image href="../resources/images/nodeInMaintenance.png"/>
+        </section>
+        <section>
+            <title>Parent MO</title>
+            <p>
+                This column displays the immediate Parent of the searched MO. If the searched MO belong to different namespaces 
+                with same name, but the immediate parent is same then it displays the same Parent.
+            </p>
+            <p>
+                If the searched MO belongs to multiple namespaces on the same nodeType and if the immediate parent is the 
+                same then it still displays the same parent.
+            </p>
+            <p>
+                If the search results do not appear unique in the result set, by clicking the checkbox of the managed object from the results,
+                details in the detail panel will be shown, use the details panel to view the FDN to determine the unique instance identity.
+            </p>
+
+            <image href="../resources/images/ParentMO.png"/>
+        </section>
+        <section>
+            <title>Attribute Column</title>
+            <p>
+                In case of YANG based nodes, the attributes having duplicated ENUM members a tooltip rendering name and namespace is rendered
+            </p>
+            <image href="../resources/images/type_tooltip.png" />
+        </section>
+        <section>
+            <title>Select Objects</title>
+            <p>
+                Objects returned in Network Explorer can be selected to save as a Collection, or to launch another application.
+                When selecting objects, single selections can be made by clicking the row.
+                Multiple selections can be made by clicking the checkboxes of the objects you want to return. You can
+                select ranges by clicking the first row, then hold shift and click the last row. The clicked rows and
+                all rows in between will be selected. You can select all the objects by clicking the checkbox in the
+                table header. After making the selection, you can
+                <xref href="../tutorials/collectionsTutorials/collectionsFromSearchResults.xml" type="concept">add these objects to a Collection</xref>, or
+                <xref href="../tutorials/searchTutorials/launchApplicationFromNetworkExplorer.xml" type="concept">open other applications directly</xref>.
+            </p>
+            <p>
+                It is also possible to select an Object by right clicking on it. This will remove any existing
+                selections. The Action Bar and right click menu will present Actions specific to that selected Object.
+            </p>
+        </section>
+        <section>
+            <title>Actions on Selected Objects</title>
+            <p>
+                Actions enable you to perform operations on network objects. ENM supports actions across all application sets.
+                When objects are selected from <b>Results</b> table, you can perform actions on them by clicking the
+                buttons displayed in the Action Bar. You can also right click on the selected object and choose the required
+                action.
+            </p>
+            <p>
+                The five most recent performed actions are displayed in the <b>Recent</b> menu.
+            </p>
+            <p>
+                <image href="../resources/images/actionsExample.png" alt="Example actions available on a selection" />
+            </p>
+            <p>
+                Some actions such as <b>Locate in Topology</b> only support a single MO. Other actions such
+                as <b>Launch AMOS</b> and <b>Launch Element Manager</b> only support node level objects like
+                NetworkElement, MeContext and ManagedElement.
+            </p>
+            <p>
+                All objects are not supported by all applications. If the selected object is not supported try the following:
+            </p>
+            <ul>
+                <li>
+                    Refine your search. For example:
+                    <ul>
+                        <li>
+                            select all objects of type NetworkElement where NetworkElement has child CmFunction and CmFunction
+                            has attr syncStatus = SYNCHRONIZED from node type ERBS
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    It is also possible to use Topology Browser to find the root object and launch the required application
+                    from Topology Browser, by performing the following steps:
+                    <ul>
+                        <li>
+                            In Network Explorer, select an object in the results table, then click <b>Locate in Topology</b>
+                            in the <b>Action Bar</b>. The object you have selected in Network Explorer will be highlighted
+                            in Topology Browser. Scroll up until you reach the root object. The root object will
+                            be a node level object such as NetworkElement, MeContext or ManagedElement. Click the
+                            root object, then click the required action from the <b>Action Bar</b>.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                If some actions are temporarily unavailable, a warning message is displayed.
+            </p>
+            <b>Grouping and Ordering</b>
+            <p>
+                Similar actions are grouped together. Line separators are used to indicate groupings in both the
+                <b>Action Bar</b> and right click menu.
+            </p>
+            <p>
+                The following actions are available:
+            </p>
+            <ul>
+                <li>Add to Collection</li>
+                <!--<li>Synchronize Alarms</li>-->
+                <li>Monitor Alarms</li>
+                <li>Monitor this Node</li>
+                <li>Run Node Health Check</li>
+                <li>View Incidents</li>
+                <li>Manage Links</li>
+                <li>Delete Link(s)</li>
+                <!--<li>Monitor Nodes</li>-->
+                <!--<li>Monitor Cells</li>-->
+                <li>Locate in Topology</li>
+                <li>Initiate CM Sync</li>
+                <li>View Cells</li>
+                <li>View Software Inventory</li>
+                <li>View License Inventory</li>
+                <li>View Hardware Inventory</li>
+                <li>View Backup Inventory</li>
+                <li>Upgrade Node Software</li>
+                <li>Restart Node</li>
+                <li>Backup Node</li>
+                <li>Launch Element Manager</li>
+                <li>Launch Element Manager (CLI)</li>
+                <li>Launch AMOS</li>
+                <li>Launch Cabinet Viewer</li>
+                <li>Launch Node CLI</li>
+                <li>Launch WinFIOL</li>
+                <li>Launch WinFIOL (CLI)</li>
+                <li>Launch NM Toolbox</li>
+                <!--<li>Collect Statistical Counters</li>-->
+                <!--<li>Collect Cell Trace Events</li>-->
+                <!--<li>Collect EBS Events</li>-->
+            </ul>
+            <p>
+                <b>Note:</b> The Actions available are based on your permissions, selection, and added Value Packs.
+            </p>
+        </section>
+        <section>
+            <title>Column Highlighting</title>
+            <p>
+                Click on the <b>Enable Column Highlighting</b> checkbox located to the left of the settings button to enable
+                column highlighting. By default this option is disabled.
+                When enabled, a column is highlighted if the current displayed portion of the results table contains a
+                column where the attribute values are not the same. This feature works in Network Explorer search
+                results, or when a Collection or Saved Search is loaded.
+            </p>
+        </section>
+        <section>
+            <title>Using Search Results in Other Applications</title>
+            <p>
+                Network Explorer can be used for object selection for other ENM applications. Applications can be launched
+                directly from Network Explorer using dedicated Action Bar actions, such as Topology Browser's <b>Locate in Topology</b> action.
+            </p>
+        </section>
+        <section>
+            <title>Viewing and Editing a network object's Attributes</title>
+            <p>
+                The attribute properties of a node can be viewed or edited in the panel on the right hand side of the
+                Network Explorer main page. This panel is known as the details panel.
+                The details panel is displayed by default. Click the information icon in the top right
+                hand side of the action bar to display the details panel.
+                For more information on viewing a network object's attributes see the
+                <xref scope="external" href="#help/app/topologybrowser/topic/tutorials/tutorial2">View Attribute Details</xref>
+                tutorial in Topology Browser help.
+                For more information on editing a network object's attributes see the
+                <xref scope="external" href="#help/app/topologybrowser/topic/tutorials/tutorial3">Edit Attribute Details</xref>
+                tutorial in Topology Browser help.
+            </p>
+        </section>
+    </conbody>
+</concept>

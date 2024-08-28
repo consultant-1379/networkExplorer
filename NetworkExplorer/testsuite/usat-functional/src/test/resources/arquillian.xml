@@ -1,0 +1,20 @@
+<arquillian>
+
+  <extension qualifier="webdriver">
+    <property name="browser">${browser.name}</property>
+  </extension>
+
+  <extension qualifier="graphene">
+    <property name="url">${app.url}</property>
+    <property name="waitGuiInterval">15</property>
+    <property name="waitAjaxInterval">30</property>
+    <property name="waitModelInterval">120</property>
+  </extension>
+
+  <extension qualifier="screenshooter">
+    <property name="takeOnEveryAction">true</property>
+    <property name="takeBeforeTest">true</property>
+    <property name="takeAfterTest">true</property>
+  </extension>
+
+</arquillian>

@@ -1,0 +1,10 @@
+{
+    "enterSearchCriteria" : "Enter Search Criteria",
+    "singleWordQueries" : "Single word queries",
+    "advancedQueries" : "Advanced queries",
+    "filters" : "Filters",
+    "savedSearchName" : "<Saved Search Name>",
+    "collectionName" : "<Collection Name>",
+    "nodeName" : "<Node Name>",
+    "objectType" : "<Object Type>"
+}

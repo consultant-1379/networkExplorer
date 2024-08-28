@@ -1,0 +1,101 @@
+<concept id="NetworkExplorer-searchForManagedObjectByName">
+    <title>Searching for Managed Objects by Name</title>
+    <conbody>
+        <section>
+            <p>
+                To search for Managed Objects by name, you can specify a name using the following syntax, replacing [NAME] with the desired name:
+            </p>
+            <codeblock>
+                [TYPE] name = [NAME]
+            </codeblock>
+            <codeblock>
+                [TYPE] name != [NAME]
+            </codeblock>
+            <p>
+                For example, to return all Managed Objects of type MeContext with the name ERBS01, use the following query:
+            </p>
+            <codeblock>
+                <b>MeContext name = ERBS01</b>
+            </codeblock>
+            <p>
+                To return all Managed Objects of type MeContext with the name not equal to ERBS01, use the following query:
+            </p>
+            <codeblock>
+                MeContext name != ERBS01
+            </codeblock>
+            <p>
+                To search for a Managed Object with attributes use the following syntax:
+            </p>
+            <codeblock>
+                select object [MO TYPE] with attr [ATTRIBUTE_NAME]
+            </codeblock>
+            <p>
+                For the shorthand version to search for a Managed Object with attributes use the following syntax:
+            </p>
+            <codeblock>
+                [MO TYPE] with [ATTRIBUTE_NAME]
+            </codeblock>
+            <p>
+                To search for a Managed Object by name with attributes use the following syntax:
+            </p>
+            <codeblock>
+                [TYPE] where name = [NAME] and [ATTRIBUTE_NAME] [OPERATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <p>
+                To return all Managed Objects except Managed Objects with a given name or attributes use the following
+                syntax:
+            </p>
+            <codeblock>
+                [TYPE] where name != [NAME] and [ATTRIBUTE_NAME] [OPERATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <p>
+                For example:
+                To return all Managed Objects of type MeContext with name "node1" and where the neType is "ERBS":
+            </p>
+            <codeblock>
+                MeContext where name = node1 and neType = ERBS
+            </codeblock>
+            <p>
+                To return all Managed Objects of type MeContext without name "node1" and where the neType is not "ERBS":
+            </p>
+            <codeblock>
+                MeContext where name != node1 and neType != ERBS
+            </codeblock>
+            <p>
+                Name search also supports wildcards at the start and/or end of the name when using the '=' operator.
+            </p>
+            <p>
+                <b>Note:</b>
+                Wildcards cannot be used with the '!=' operator. Wildcards are not supported in the middle of the name.
+
+                For example:
+
+                To return all MeContext types that start with "ERBS", you would use the following query:
+            </p>
+            <codeblock>
+                MeContext name = ERBS*
+            </codeblock>
+            <p>
+                To get all MeContext objects with the characters "RBS" in them, you would use the following query:
+            </p>
+            <codeblock>
+                MeContext name=*RBS*
+            </codeblock>
+            <p>
+                To get all nodes of all types in the system, you would use the following query:
+            </p>
+            <codeblock>
+                all nodes
+            </codeblock>
+            <p>
+                The long hand version of the name syntax is as follows:
+            </p>
+            <codeblock>
+                select all objects of type [TYPE] where name equal to [NAME]
+            </codeblock>
+            <codeblock>
+                select all objects of type MeContext where name equal to ERBS01
+            </codeblock>
+        </section>
+    </conbody>
+</concept>

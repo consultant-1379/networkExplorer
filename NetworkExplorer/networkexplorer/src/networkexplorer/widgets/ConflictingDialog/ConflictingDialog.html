@@ -1,0 +1,36 @@
+<div class="eaNetworkExplorer-wConflictingCellDialog">
+    {{#if radioButtonsShow}}
+    <div class="eaNetworkExplorer-wConflictingCellDialog-warningMessage">
+        <p class="eaNetworkExplorer-wConflictingCellDialog-warningMessage-Content-Para">
+            {{node}}
+        </p>
+        <button class="eaNetworkExplorer-wConflictingCellDialog-button">View conflicting nodes</button>
+
+        <div class="eaNetworkExplorer-wConflictingCellDialog-conflictingCell">
+            <p class="eaNetworkExplorer-wConflictingCellDialog-warningMessage-Content">
+                {{warningMessage}}
+            </p>
+            <ul>
+                <li class="eaNetworkExplorer-wConflictingCellDialog-conflictingCell">
+                    <label>
+                        <input class="ebRadioBtn eaNetworkExplorer-wConflictingCellDialog-conflictingCell-radioMove" type="radio"
+                               name="conflictingCell" value="move all the nodes to the selected collection"/>
+                        <span class="ebRadioBtn-inputStatus"></span>
+                        <span class="ebRadioBtn-label">move all the nodes to the selected collection</span>
+                    </label>
+                </li>
+                <li class="eaNetworkExplorer-wConflictingCellDialog-conflictingCell">
+                    <label>
+                        <input class="ebRadioBtn eaNetworkExplorer-wConflictingCellDialog-conflictingCell-radioUnique" type="radio"
+                               name="conflictingCell" value="move only the nodes that are not conflicting to the selected collections" checked/>
+                        <span class="ebRadioBtn-inputStatus"></span>
+                        <span class="ebRadioBtn-label">move only the nodes that are not conflicting to the selected collections</span>
+                    </label>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+    {{/if}}
+</div>

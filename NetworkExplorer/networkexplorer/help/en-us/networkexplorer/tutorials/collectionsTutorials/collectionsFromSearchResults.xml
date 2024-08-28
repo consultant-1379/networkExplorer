@@ -1,0 +1,139 @@
+<task id="NetworkExplorer-CollectionFromSearchResults">
+    <title>Add a Managed Object(s) to a Collection from Search Results</title>
+    <taskbody>
+        <prereq>
+            <ul>
+                <li>You have a Managed Object to add.</li>
+                <li>
+                    There is limit imposed on the maximum number of objects that can be added to a Collection. If the
+                    number of selected objects being added to a new or existing Collection exceeds this limit an
+                    error dialog is displayed. The default limit is 25,000 objects.
+                    Note: If you require a change to the collection size limit, contact your system administrator.
+                </li>
+                <li>
+                    You have appropriate access rights to modify a Collection. You can modify your public or
+                    private Collections. An Administrator can modify other user's public Collections. See
+                    <xref href="../../prerequisites.xml" type="concept">Prerequisites</xref>
+                    for user role details.
+                </li>
+            </ul>
+        </prereq>
+        <context>
+            <p>
+                <b>Objective</b>
+            </p>
+            <p>
+                This tutorial describes how to add Managed Object(s) (MO) to a new or existing Collection from search
+                results.
+            </p>
+            <b>Outline</b>
+            <ol>
+                <li>
+                    <xref type="task" href="#1">Select MO(s) from the Results Table</xref>
+                </li>
+                <li>
+                    <xref type="task" href="#2">Add the MO(s) to a Collection</xref>
+                </li>
+                <li>
+                    <xref type="task" href="#3">Save a Collection</xref>
+                </li>
+            </ol>
+        </context>
+        <steps>
+            <step id="1">
+                <cmd>Select MO(s) from the Results Table</cmd>
+                <info>
+                    <ol>
+                        <li>
+                            In the Network Explorer <b>Results Table</b>, click the row to make a single selection.
+                            Multiple selections can be made by clicking the checkboxes of the MO(s) you want to return.
+                            You can select MO ranges by clicking the first item, then hold shift and click the last.
+                        </li>
+                        <li>
+                            The rows clicked and all rows in between are selected. You can select all the MOs in the
+                            table by clicking the checkbox in the table header.
+                        </li>
+                    </ol>
+                </info>
+            </step>
+            <step id="2">
+                <cmd>Add the MO(s) to a Collection</cmd>
+                <info>
+                    <ol>
+                        <li>
+                            Click the <b>Add to a Collection</b> button in the <b>Action Bar</b>. A
+                            <b>Flyout Panel</b>
+                            is displayed.
+                            The MO(s) can be added to a new or existing Collection
+                        </li>
+                        <li>To add the MO(s) to a new Collection, click the <b>Add to a new Collection</b> radio
+                            button
+                        </li>
+                        <li>
+                            Enter a Collection name. This field is mandatory. You cannot use the name of a Collection
+                            or
+                            Managed Object type that already exists. You can only use alphanumeric characters
+                            (A-Z, a-z and 0-9), spaces and certain special characters. The supported special characters
+                            are:
+                            <codeblock>
+                                <b>. - _</b>
+                            </codeblock>
+                        </li>
+                        <li>
+                            Click the <b>private</b> or <b>public</b> sharing permissions radio button. The default
+                            value
+                            is private.
+                        </li>
+                    </ol>
+                    <p>
+                        Or
+                    </p>
+                    <ol>
+                        <li>
+                            To add the MO(s) to an existing Collection, click the
+                            <b>Add to an existing Collection</b>
+                            radio button. A list of Collections that you are allowed to modify is displayed.
+                        </li>
+                        <li>
+                            Click the <b>Replace current objects</b> checkbox if you want to overwrite the contents
+                            of the existing Collection.
+                        </li>
+                        <li>
+                            The list of existing Collections can be filtered by name, sharing permissions and favorite
+                            status. To filter by name, type the required Collection name in the filter box. To filter by
+                            permissions, select the <b>All</b>, <b>Public</b>, or <b>Private</b> buttons. Click the
+                            <b>Favorites</b>
+                            button to view favorites.
+                        </li>
+                        <li>
+                            Click on a Collection name to select that Collection.
+                        </li>
+                    </ol>
+                </info>
+            </step>
+            <step id="3">
+                <cmd>Save a Collection</cmd>
+                <info>
+                    <p>
+                        <ol>
+                            <li>
+                                Click the <b>Add</b> button to save the Collection.
+                            </li>
+                        </ol>
+                    </p>
+                </info>
+            </step>
+        </steps>
+        <result>
+            <p>
+                <ol>
+                    <li>
+                        A saved notification is displayed and the Collection name is displayed in the Network Panel under
+                        the Collections Tab.
+                        <p>Note : Refresh Network Explorer for latest Information in Network Panel.</p>
+                    </li>
+                </ol>
+            </p>
+        </result>
+    </taskbody>
+</task>

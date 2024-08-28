@@ -1,0 +1,160 @@
+{
+  "version": 5,
+  "id": "networkexplorer",
+  "name": "Network Explorer",
+  "shortInfo": "Use Network Explorer to search and retrieve all Network Configuration Data. The returned data can be grouped into Collections or Saved searches to facilitate sharing and reuse.",
+  "path": "/#networkexplorer",
+  "protocol": "secure",
+  "port": 443,
+  "type": "web",
+  "resources": [
+    "topologySearchService",
+    "searchExecutor",
+    "topologyCollectionsService",
+    "modelInformationService",
+    "Collections_Public",
+    "Collections_Private",
+    "CollectionsOthers_Public",
+    "CollectionsOthers_Private"
+  ],
+  "groups": [{
+    "id": "Provisioning",
+    "name": "Provisioning"
+  }],
+  "consumeActions": [
+    "topologybrowser-locate-in-topology",
+    "advancedmoscripting-remote-show",
+    "nodecli-remote-show",
+    "cabinetviewer-remote-show",
+    "winfiolcli-remote-show",
+    "winfiolgui-remote-show",
+    "alarmmonitor-remote-show",
+    "elementmanager-remote-show",
+    "emcli-remote-show",
+    "emgui-remote-show",
+    "nmtoolbox-remote-show",
+    "shmcreateupgradejob-upgrade-node-software",
+    "shmcreatebackupjob-backup-node",
+    "shmnoderestartjob-restart-node",
+    "shmbackupinventory-view-backup-inventory",
+    "shmsoftwareinventory-view-software-inventory",
+    "shmlicenseinventory-view-license-inventory",
+    "shmhardwareinventory-view-hardware-inventory",
+    "topologybrowser-initiate-cm-sync",
+    "topologybrowser-edit-state",
+    "cellmanagement-view-cells",
+    "nwiecli-remote-show",
+    "nodemonitor-view-node",
+    "incidentmanagement-view-incidents",
+    "linkmanagement-list-link",
+    "linkmanagement-delete-link",
+    "generatehcreport-run-node-health-check",
+    "networkexplorer-move-to-collection"
+  ],
+  "provideActions": [{
+      "defaultLabel": "Add to a Collection",
+      "name": "networkexplorer-add-to-collection",
+      "type": "primary",
+      "multipleSelection": true,
+      "plugin": "networkexplorer/networkexplorer-add-to-collection",
+      "category": "Configuration Management",
+      "icon": "addToFolder",
+      "order": 100
+    },{
+      "defaultLabel": "Create Collection",
+      "name": "networkexplorer-create-nested-collection",
+      "multipleSelection": false,
+      "plugin": "networkexplorer/networkexplorer-create-nested-collection",
+      "category": "Collection Actions",
+      "order": 100
+    },{
+      "defaultLabel": "Create Private Network",
+      "name": "networkexplorer-create-private-network",
+      "multipleSelection": false,
+      "plugin": "networkexplorer/networkexplorer-create-private-network",
+      "category": "Collection Actions",
+      "order": 110
+    },{
+      "defaultLabel": "Export Topology",
+      "name": "networkexplorer-export-topology",
+      "multipleSelection": true,
+      "plugin": "networkexplorer/networkexplorer-export-topology",
+      "category": "Collection Actions",
+      "icon": "export",
+      "order": 200
+    },{
+      "defaultLabel": "Export Collection",
+      "name": "networkexplorer-export-collection",
+      "multipleSelection": true,
+      "plugin": "networkexplorer/networkexplorer-export-collection",
+      "category": "Collection Actions",
+      "icon": "export",
+      "order": 201
+    },{
+      "defaultLabel": "Add Topology Data",
+      "name": "networkexplorer-add-topology-data",
+      "multipleSelection": false,
+      "plugin": "networkexplorer/networkexplorer-add-topology-data",
+      "category": "Collection Modification Actions",
+      "order": 100
+    },{
+      "defaultLabel": "Add Topology Data",
+      "name": "networkexplorer-add-object-collections",
+      "multipleSelection": false,
+      "plugin": "networkexplorer/networkexplorer-add-object-collections",
+      "category": "Collection Modification Actions",
+      "order": 110
+    },{
+      "defaultLabel": "Edit Criteria",
+      "name": "networkexplorer-edit-search-criteria-collection",
+      "multipleSelection": false,
+      "plugin": "networkexplorer/networkexplorer-edit-search-criteria-collection",
+      "category": "Collection Modification Actions",
+      "order": 120
+    },{
+      "defaultLabel": "Update Contents",
+      "name": "networkexplorer-update-search-criteria-collection-contents",
+      "multipleSelection": false,
+      "plugin": "networkexplorer/networkexplorer-update-search-criteria-collection-contents",
+      "category": "Collection Modification Actions",
+      "order": 130
+    },{
+      "defaultLabel": "Rename",
+      "name": "networkexplorer-rename-collection",
+      "multipleSelection": false,
+      "plugin": "networkexplorer/networkexplorer-rename-collection",
+      "category": "Collection Modification Actions",
+      "order": 200
+    },{
+      "defaultLabel": "Set To Public",
+      "name": "networkexplorer-set-to-public",
+      "multipleSelection": false,
+      "plugin": "networkexplorer/networkexplorer-set-to-public",
+      "category": "Collection Modification Actions",
+      "order": 215
+    },{
+      "defaultLabel": "Delete",
+      "name": "networkexplorer-delete-collections",
+      "multipleSelection": true,
+      "plugin": "networkexplorer/networkexplorer-delete-collections",
+      "category": "Collection Modification Actions",
+      "icon": "delete",
+      "order": 300
+    },{
+      "defaultLabel": "Remove from Collection",
+      "name": "networkexplorer-remove-leaf-collection",
+      "multipleSelection": true,
+      "plugin": "networkexplorer/networkexplorer-remove-leaf-collection",
+      "category": "Collection Modification Actions",
+      "order": 250
+    },{
+    "defaultLabel": "Move to Collection",
+    "name": "networkexplorer-move-to-collection",
+    "type": "primary",
+    "multipleSelection": true,
+    "plugin": "networkexplorer/networkexplorer-move-to-collection",
+    "category": "Collection Modification Actions",
+    "order": 115
+    }
+  ]
+}

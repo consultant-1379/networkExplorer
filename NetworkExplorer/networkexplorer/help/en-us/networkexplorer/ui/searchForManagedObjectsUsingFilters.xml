@@ -1,0 +1,139 @@
+<concept id="NetworkExplorer-searchForManagedObjectsUsingAttributesAndComparators">
+    <title>Search for Managed Objects Using Filters</title>
+    <conbody>
+        <p>
+            Filtering allows you to exclude search results that are not required. The available filtering options are listed below.
+        </p>
+        <ol>
+            <li>
+                <xref type="task" href="#managementState">Filter by ManagementState</xref>
+            </li>
+            <li>
+                <xref type="task" href="#radioAccessTechnology">Filter by RadioAccessTechnology</xref>
+            </li>
+            <li>
+                <xref type="task" href="#managementState_RadioAccessTechnology">Filter by ManagementState and RadioAccessTechnology</xref>
+            </li>
+        </ol>
+        <section id="managementState">
+            <title>Filter by ManagementState</title>
+            <p>
+                You can use the following comparators:
+            </p>
+            <p>
+                <simpletable>
+                    <sthead>
+                        <stentry>Long Hand</stentry>
+                        <stentry>Short Hand</stentry>
+                    </sthead>
+                    <strow>
+                        <stentry>equal to</stentry>
+                        <stentry>=</stentry>
+                    </strow>
+                    <strow>
+                        <stentry>not equal to</stentry>
+                        <stentry>!=</stentry>
+                    </strow>
+                </simpletable>
+            </p>
+            <p>
+                You can specify a filter using the following syntax, replacing [NAME] with the required filter name and [VALUE] with the required value:
+            </p>
+            <codeblock>
+                [TYPE] filter by [NAME] = [VALUE]
+            </codeblock>
+            <codeblock>
+                [TYPE] filter by [NAME] != [VALUE]
+            </codeblock>
+            <p>
+                For example, to return all Managed Objects of type MeContext where the node is in maintenance mode, use the
+                following query:
+            </p>
+            <codeblock>
+                select all objects of type MeContext filter by managementState = MAINTENANCE
+            </codeblock>
+        </section>
+        <section id="radioAccessTechnology">
+            <title>Filter by RadioAccessTechnology</title>
+            <p>
+                RadioAccessTechnology is only available to be filtered for nodes of  Type RadioNode:
+            </p>
+            <p>
+                You can use the following comparators:
+            </p>
+            <p>
+                <simpletable>
+                    <sthead>
+                        <stentry>Single Value</stentry>
+                        <stentry>Multiple Values</stentry>
+                    </sthead>
+                    <strow>
+                        <stentry>contains</stentry>
+                        <stentry>contains any of</stentry>
+                    </strow>
+                    <strow>
+                        <stentry>containing</stentry>
+                        <stentry>containing any of</stentry>
+                    </strow>
+                </simpletable>
+            </p>
+            <p>
+                You can specify a filter using the following syntax, replacing [NAME] with the required filter name and [VALUE] with the required value
+                and [VALUES] with the required comma separated values:
+            </p>
+            <codeblock>
+                [TYPE] filter by [NAME] contains [VALUE]
+            </codeblock>
+            <codeblock>
+                [TYPE] filter by [NAME] contains any of [VALUES]
+            </codeblock>
+            <p>
+                For example, to return all Managed Objects of type MeContext where the node contains radioAccessTechnology 4G, use the
+                following query:
+            </p>
+            <codeblock>
+                select all objects of type MeContext filter by radioAccessTechnology contains 4G
+            </codeblock>
+            <p>
+                For example, to return all Managed Objects of type MeContext where the node contains any of radioAccessTechnology 4G and 5G, use the
+                following query:
+            </p>
+            <codeblock>
+                select all objects of type MeContext filter by radioAccessTechnology contains any of 4G,5G
+            </codeblock>
+        </section>
+        <section id="managementState_RadioAccessTechnology">
+            <title>Filter by managementState and radioAccessTechnology</title>
+            <p>
+                You can specify a filter using the following syntax, replacing [NAME] replacing [NAME] with the required filter name and [VALUE] with the required value
+                and [VALUES] with the required comma separated values:
+            </p>
+            <codeblock>
+                [TYPE] filter by [NAME] = [VALUE] and [NAME] contains [VALUE]
+            </codeblock>
+            <codeblock>
+                [TYPE] filter by [NAME] != [VALUE] and [NAME] contains [VALUE]
+            </codeblock>
+            <codeblock>
+                [TYPE] filter by [NAME] = [VALUE] and [NAME] contains any of [VALUES]
+            </codeblock>
+            <codeblock>
+                [TYPE] filter by [NAME] != [VALUE] and [NAME] contains any of [VALUES]
+            </codeblock>
+            <p>
+                For example, to return all Managed Objects of type MeContext where the node contains radioAccessTechnology 4G, use the
+                following query:
+            </p>
+            <codeblock>
+                select all objects of type MeContext filter by radioAccessTechnology contains 4G
+            </codeblock>
+            <p>
+                For example, to return all Managed Objects of type MeContext where the node is in maintenance mode and contains any of
+                radioAccessTechnology 4G and 5G, use the following query:
+            </p>
+            <codeblock>
+                select all objects of type MeContext filter by managementState = MAINTENANCE filter by radioAccessTechnology contains any of 4G,5G
+            </codeblock>
+        </section>
+    </conbody>
+</concept>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="NetworkExplorer-UserInterface-Collections">
+    <title>Collections</title>
+    <conbody>
+        <p>
+            <b>On this page</b>
+            <ul>
+                <li><xref type="task" href="#addMOsToCollFromSearch">Add Managed Object(s) to a Collection from Search Results</xref></li>
+            </ul>
+        </p>
+        <section>
+            <title id="addMOsToCollFromSearch">Add Managed Object(s) to a Collection from Search Results</title>
+            <p>
+                Search for the required Managed Object(s). Select the object(s) from the table you want to save.
+                Click the <b>Add to a Collection</b> button in the Action Bar. A panel is displayed on the
+                right hand side of the screen. There are now two options available:
+                <ul>
+                    <li>Add the Managed Object(s) to a new Collection</li>
+                    <li>Add the Managed Object(s) to an existing Collection</li>
+                </ul>
+            </p>
+            <fig>
+                <title>
+                    The Add to a Collection panel
+                </title>
+                <image href="../resources/images/collectionHandler_flyout.png"/>
+            </fig>
+            <p>
+                Detailed instructions on how to add a Managed Object(s) to a new or existing Collection from Search Results
+                can be found in the
+                <xref type="task" href="../tutorials/collectionsTutorials/collectionsFromSearchResults.xml">
+                    Add a Managed Object(s) to a Collection from Search Results</xref> tutorial.
+            </p>
+        </section>
+    </conbody>
+</concept>

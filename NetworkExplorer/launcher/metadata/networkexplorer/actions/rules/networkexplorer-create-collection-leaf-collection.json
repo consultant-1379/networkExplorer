@@ -1,0 +1,10 @@
+{
+  "actionName": "networkexplorer-create-nested-collection",
+  "condition": {
+    "dataType": "Collection",
+    "properties": [{
+      "name": "subType",
+      "value":"LEAF"
+    }]
+  }
+}

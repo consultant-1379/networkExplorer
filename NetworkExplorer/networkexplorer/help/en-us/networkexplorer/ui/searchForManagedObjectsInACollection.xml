@@ -1,0 +1,71 @@
+<concept id="NetworkExplorer-searchForManagedObjectsInACollection">
+    <title>Searching for Managed Objects in a Collection</title>
+    <conbody>
+        <section>
+            <p>
+                To return objects that exist in a specific Collection, you can specify the type and Collection names
+                using the following syntax, replacing [TYPE] and [COLLECTION_NAME] with the desired values:
+            </p>
+            <codeblock>
+                [TYPE] from collection [COLLECTION_NAME]
+            </codeblock>
+            <p>
+                For Example - to get all ENodeBFunction from a Collection named "dublin_collection":
+            </p>
+            <codeblock>
+                ENodeBFunction <b>from collection</b> dublin_collection
+            </codeblock>
+            <p>
+                You can also use different attribute conditions with the Collection syntax, like the following:
+            </p>
+            <codeblock>
+                [TYPE] from collection [COLLECTION_NAME] where [ATTRIBUTE_NAME] [OPERATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                ENodeBFunction <b>from collection</b> dublin_city_center <b>where</b> eNBId <b>&gt;=</b> 507
+            </codeblock>
+            <p>
+                However, Network Explorer does not support the "where" condition while intersecting Collections,
+                for example, the following query is
+                <b>NOT</b>
+                supported:
+            </p>
+            <codeblock>
+                select <b>collection</b> dublin_city_center <b>from collection</b> dublin_collection where dnsLookupTimer=108
+            </codeblock>
+            <p>
+                You can also search multiple Collections by specifying multiple Collection names using the following
+                syntax:
+            </p>
+            <codeblock>
+                [TYPE] from collection [COLLECTION_NAME], collection [COLLECTION_NAME], ..
+            </codeblock>
+            <p>
+                For Example - to get all ENodeBFunction from a Collection named "dublin_collection" and Collection
+                "dublin_city_center":
+            </p>
+            <codeblock>
+                ENodeBFunction <b>from collection</b> dublin_collection, <b>collection</b> dublin_city_center
+            </codeblock>
+            <p>
+                You can also search by intersecting different Collections by using the following syntax:
+            </p>
+            <codeblock>
+                collection [COLLECTION_NAME] from collection [COLLECTION_NAME]
+            </codeblock>
+            <p>
+                For Example - to get all managed objects existing in Collection "subsetcollection", and also exist in Collection "largecollection":
+            </p>
+            <codeblock>
+                collection <b>subsetcollection</b> from collection <b>largecollection</b>
+            </codeblock>
+            <p>
+                A Collection name containing spaces or special characters should be enclosed within double quotes.
+                For example:
+            </p>
+            <codeblock>
+                select collection <b>"dublin city center"</b> from collection dublin_collection
+            </codeblock>
+        </section>
+    </conbody>
+</concept>

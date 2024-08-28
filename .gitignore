@@ -1,0 +1,45 @@
+# Global .gitignore #
+*.tmp
+*.bak
+*.orig
+
+####################### Build
+
+# Build Folders
+target/
+tmp/
+
+# Tarballs
+*.tar.gz
+
+####################### Logs
+
+# We should not commit debug logs
+*.log
+
+####################### Development Environment
+
+# We must never commit node_modules or .cdt for applications
+node_modules/
+.cdt/
+cdt.json
+
+# Eclipse related files
+.settings
+.classpath
+.project
+
+# IntelliJ files #
+workspace.xml
+.idea/
+*.iml
+
+# Sublime files #
+*.sublime-project
+*.sublime-workspace
+
+# Node / npm
+package-lock.json
+
+# Frequently changing files, must explicity commit when needed
+build.json

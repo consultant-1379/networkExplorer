@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="NetworkExplorer-Collections">
+    <title>Manage Collections</title>
+    <conbody>
+        <section>
+            <title id="userRightsEditCollection">User rights for modifying a Collection</title>
+            <p>
+                Collections can be modified by adding new objects, overwriting with new objects or removing objects.
+                The ability to modify an existing Collection will depend on the user's role, the owner of the Collection, and the sharing permissions of the Collection.
+                The access rights for modifying a Collection are as follows:
+                <ul><li>
+                    Users with Network_Explorer_Operator and Operator predefined role can modify their own public or
+                    private Collections.
+                </li><li>
+                    Users with Network_Explorer_Administrator and Administrator predefined role in addition to the
+                    previous rule can also modify other user’s public or private Collections.
+                </li></ul>
+                Customized roles can be created to manage different scenarios.
+            </p>
+        </section>
+        <section>
+            <title>Locate Collection</title>
+            <p>
+                To locate a Collection, click on the Collection name in the Collections Tab under Network Panel. Clicking on a Collection in the Tab will display the Collection details and
+                populate the results table with the saved Collection. Other Collections can be located by clicking the
+                "Collection Management".
+            </p>
+            <image href="../resources/images/NetworkExplorer_childSavedSearch.png"/>
+            <p>Here, the Collection Management page is displayed reporting all of the existing Collections
+                that the user is allowed to view. For a detailed description of this page refer to the
+                <xref scope="external" href="#help/app/collectionmanagement/topic/ui/collections">
+                    Collection Management Page</xref> section.
+            </p>
+            <p>
+                Collections can either be saved as public or private. Private Collections can be viewed by the user that created them,
+                if they have the capability Collections_Private:read, or by users who have the capability CollectionsOthers_Private:read.
+                Public Collections can be viewed by their owner, if they have the capability Collections_Public:read, or by users that have
+                the capability CollectionsOthers_Public:read.
+            </p>
+            <p>
+                Alternatively, the contents of a Collection can be returned by entering its name in the search box.
+                Collection's whose name contains a space character must be surrounded by the double quote character on
+                each side, for example "collection name".
+            </p>
+            <p>
+                When a selected collection/searched collection is modified by users either by adding or removing Nodes / Managed Objects by a different Network Explorer instance or other application of ENM, a notification is reported to Network Explorer opened page, that the selected collection is not up to the date and user is provided with an option to refresh the contents displayed.
+            </p>
+            <image href="../resources/images/collection_webpush.png"/>
+            <p>
+                If multiple collections are modified by users either by adding or removing Nodes / Managed Objects or moving the Managed Objects between two collections by a different Network Explorer instance or other application of ENM, a notification is reported to Network Explorer opened page, that the selected collections are not up to the date and user is provided with an option to refresh the contents displayed.
+            </p>
+
+            <p>
+                The new collection name will be appended to the current notification if the user chooses to select a different collection and does not click on Refresh or Close the current Notification. This also applies if another instance of Network Explorer or another application of ENM changes the selected collection. The maximum number of collections for which the names of the collections may show in alerts is five. The message will provide the names of the first five collections and offer a count of the remaining collections if more than five collections are updated and no action is taken.
+            </p>
+            <image href="../resources/images/collection_webpush_multiple_5.png"/>
+            <image href="../resources/images/collection_webpush_multiple_above_5.png"/>
+            <p>
+                When Apply Recursively check box is selected and any of the child or nested collection collections under selected Parent collection is modified by users either by adding or removing Nodes / Managed Objects by a different Network Explorer instance or other application of ENM, a notification is reported to Network Explorer opened page, that the selected collection is not up to the date and user is provided with an option to refresh the contents displayed.
+            </p>
+            <image href="../resources/images/webpush_applyRecursive.png"/>
+            <p>
+                On clicking the Refresh link when "Apply Recursively" check box is selected, all the child and nested child collection(s) nodes along with the direct child node(s) of the selected collection will get display in the result page.
+            </p>
+            <image href="../resources/images/webpush_applyRecursive_Refresh.png"/>
+            <p>
+                <b>Note:</b> Loading a Collection that contains deleted Object(s) will result in the automatic removal
+                of the deleted Object(s) from the Collection. This means that the user will no longer see the deleted
+                Object(s) in the results table of their Collection. This can occur when a Collection contains a node
+                that has been deleted from the Network.
+            </p>
+        </section>
+        <section>
+            <title>Close a Collection</title>
+            <p>
+                A button labeled "Close Collection" exists in the top right of the Collection name label.
+                The user can be directed back to the main network explorer page by selecting the "Close Collection" button.
+            </p>
+        </section>
+        <section>
+            <title>Favorite Collections</title>
+            <p>
+                There are a number of ways to favorite a Collection.
+                <ul>
+                    <li>
+                        Clicking the star beside the currently loaded Collection name on the Results page.
+                    </li>
+                    <li>
+                        Selecting Collection in the Collection Management page and clicking the Favorite Action.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                A list of all your favorite Collections is displayed in the Saved Searches Tab under the "Favorites".
+            </p>
+            <p>
+                To remove a Collection by Favorite:
+                <ul>
+                    <li>
+                        Click on the yellow star of a Collection to remove that Collection as a favorite.
+                    </li>
+                    <li>
+                        Selecting one or more Collections in the Collection Management page and clicking the
+                        button labeled "Unfavorite" in the Action Bar.
+                    </li>
+                </ul>
+            </p>
+        </section>
+    </conbody>
+</concept>

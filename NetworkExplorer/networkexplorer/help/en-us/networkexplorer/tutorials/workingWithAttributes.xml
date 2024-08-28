@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="NetworkExplorer-OtherApps">
+    <title>Viewing and editing a Network Object's attributes</title>
+    <conbody>
+        <section>
+            <title>Viewing a network object's Attributes</title>
+            <p>
+                The attribute properties of a node can be viewed or edited in the panel on the right hand side of the
+                Network Explorer main page. This panel is known as the Details panel.
+            </p>
+            <p>
+                The Details panel is displayed by default. If it is not visible, you can make it appear by clicking the
+                information icon in the top right hand side of the Action Bar. To dismiss the Details panel click the
+                information icon or the close button.
+            </p>
+            <p>
+                <b>Selecting a network object</b>
+            </p>
+            <p>
+                To view a network object's attributes, select a row in the results table.
+            </p>
+            <p>
+                <b>Selecting multiple network objects</b>
+            </p>
+            <p>
+                If multiple network objects are selected, The last selected network object's attributes will be
+                retrieved and displayed in the Details panel. If the last selected network object is deselected
+                the Details panel will display the attributes for the second last network object that was selected.
+                If the process of deselecting the last selected network object is repeated, the Details panel will be
+                updated each time with the previously selected network object's attributes. This behaviour will continue
+                until all network objects have been deselected.
+            </p>
+            <p>
+                <b>Selecting all network objects</b>
+            </p>
+            <p>
+                If the table header checkbox is used to select all network objects, then the Details panel will display
+                the attributes for the last network object in the table.
+            </p>
+            <p>
+                For more information on viewing a network object's attributes see the
+                <xref scope="external" href="#help/app/topologybrowser/topic/tutorials/tutorial2">View Attribute Details</xref>
+                tutorial in Topology Browser's help.
+            </p>
+            <p>
+                TCIM (Transport Common Information Model) Model Description document details information on the managed objects, attributes and relationships.
+            </p>
+            <p>
+                See TCIM Model Description document, 3/15519-CNA 403 3141. This is available in ENM CPI Library, EN/LZN 703 0205 R95A
+            </p>
+        </section>
+        <section>
+            <title>Editing a Network Object's Attributes</title>
+            <p>
+                The Details panel allows editing of a network object's attributes.
+            </p>
+            <p>
+                For more information on editing an a network object's attributes see the
+                <xref scope="external" href="#help/app/topologybrowser/topic/tutorials/tutorial3">Edit Attribute Details</xref>
+                tutorial in Topology Browser's help.
+            </p>
+        </section>
+    </conbody>
+</concept>

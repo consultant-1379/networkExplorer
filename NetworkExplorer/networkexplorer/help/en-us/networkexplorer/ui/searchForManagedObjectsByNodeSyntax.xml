@@ -1,0 +1,95 @@
+<concept id="NetworkExplorer-searchForManagedObjectByName">
+    <title>Searching for Managed Objects by Node</title>
+    <conbody>
+        <ul>
+            <li>
+                <xref type="task" href="#node">Search for Managed Objects from Node</xref>
+            </li>
+            <li>
+                <xref type="task" href="#ignoreCase">Case Insensitive Node Name Searches</xref>
+            </li>
+        </ul>
+        <section id="node">
+            <title>Search for Managed Objects from Node</title>
+            <p>
+                A node name can be specified to refine your search criteria to a particular node using the following
+                syntax, replacing [TYPE] with the desired object type and [NODE_NAME] with the desired node type:
+            </p>
+            <codeblock>
+                [TYPE] from [NODE_NAME]
+            </codeblock>
+            <p>
+                For Example - to get all EUtranCellFDD's from the node ERBS001:
+            </p>
+            <codeblock>
+                EUtranCellFDD <b>from</b> ERBS001
+            </codeblock>
+            <p>
+                You can also filter objects by attribute values using the following syntax, replacing [ATTRIBUTE_NAME]
+                and [ATTRIBUTE_VALUE] with your desired values:
+            </p>
+            <codeblock>
+                [TYPE] from [NODE_TYPE] where [ATTRIBUTE_NAME] [OPERATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <p>
+                For Example - to get all EUtranCellFDD's from the node ERBS001, where the EUtranCellFDD's have the
+                administrativeState attribute set to locked
+            </p>
+            <codeblock>
+                EUtranCellFDD <b>from</b> ERBS001 where administrativeState <b>equal to</b> LOCKED
+            </codeblock>
+            <p>
+                The long hand version of the <b>node</b> syntax is as follows:
+            </p>
+            <codeblock>
+                [TYPE] from node [NODE_NAME]
+            </codeblock>
+            <codeblock>
+                EUtranCellFDD <b>from node</b> ERBS001
+            </codeblock>
+        </section>
+        <section id="ignoreCase">
+            <title>Case Insensitive Node Name Searches</title>
+            <p>
+                The ignoring case keyword allows you to search for a node by name, regardless of the case.
+            </p>
+            <p>
+                For Example: Use the following syntax to perform a case insensitive search.
+            </p>
+            <codeblock>
+                node [NODE_NAME] ignoring case
+            </codeblock>
+            <codeblock>
+                <b>node</b> erbs001 <b>ignoring case</b>
+            </codeblock>
+            <p>
+                The search can be extended to search across multiple nodes
+            </p>
+            <codeblock>
+                select all nodes from node <b>[NODE_NAME], [NODE_NAME]</b> ignoring case
+            </codeblock>
+            <p>
+                For Example: Use the following syntax to return the nodes ERBS001 and ERBS002 regardless of casing:
+            </p>
+            <codeblock>
+                select all nodes from node erbs001, erbs002 <b>ignoring case</b>
+            </codeblock>
+            <codeblock>
+                select NetworkElement from node erbs001, erbs002 <b>ignoring case</b>
+            </codeblock>
+            <p>
+                If returning specific Managed Objects type(s), WHERE clause restrictions can also be applied:
+            </p>
+            <codeblock>
+                select NetworkElement where ossModelIdentity = 20* from node erbs001, erbs002 <b>ignoring case</b>
+            </codeblock>
+            <p>
+                <b>Note:</b> The combination of the name attribute and ignoring case keyword is only applicable to
+                all node queries. For example: queries starting with <b>select all nodes</b>.
+            </p>
+            <codeblock>
+                select <b>all nodes</b> where name = erbs001 or name = erbs002 <b>ignoring case</b>
+            </codeblock>
+        </section>
+    </conbody>
+</concept>

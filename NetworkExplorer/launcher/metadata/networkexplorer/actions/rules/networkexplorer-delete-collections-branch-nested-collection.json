@@ -1,0 +1,13 @@
+{
+  "actionName": "networkexplorer-delete-collections",
+  "condition": {
+    "dataType": "Collection",
+    "properties": [{
+      "name": "subType",
+      "value":"BRANCH"
+    },{
+      "name": "parentId",
+      "value": "re:^([0-9]+)$"
+    }]
+  }
+}

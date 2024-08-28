@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit tests</title>
+    <script src="../../_tools/index.js"></script>
+    <script src="../../.cdt/require.config.js"></script>
+    <script src="../utils/object.assign.polyfill.js"></script>
+    <script src="../utils/object.values.polyfill.js"></script>
+    <script>
+        loadTestDependencies({
+            requireConfig: {
+                baseUrl: "../../src",
+                paths: {
+                    "test": "../test"
+                },
+                i18n:  {
+                    localesDir: "../../locales",
+                    locales: ["en-us"]
+                }
+            },
+            tests: [
+                "NetworkExplorer",
+                "NetworkExplorerView",
+                "actions/AddToCollection",
+                "actions/AddTopologyData",
+                "actions/AddObjectCollections",
+                "actions/CreateNestedCollection",
+                "actions/DeleteCollections",
+                "actions/RemoveFromThisCollection",
+                "actions/ExportCollection",
+                "actions/ExportTopology",
+                "actions/MoveToCollection",
+                "actions/RenameCollection",
+                "actions/SetToPublic",
+                "actions/CreatePrivateNetwork",
+                "actions/RemoveLeafCollection",
+                "actions/SaveSearch",
+                "actions/UpdateCollectionContents",
+                "actions/EditSearchCriteriaCollection",
+                "classes/ActionManager",
+                "classes/AutoComplete",
+                "classes/Consumable",
+                "classes/ConsumableSet",
+                "regions/SaveSearch/SaveSearch",
+                "regions/Search/Search",
+                "regions/InfoBar/InfoBar",
+                "regions/Main/Main",
+                "regions/SlidingMenu/SlidingMenu",
+                "regions/SlidingMenuRight/SlidingMenuRight",
+                "utils/LauncherUtils",
+                "utils/LauncherUtilsRest",
+                "utils/net",
+                "utils/customError",
+                "regions/SlidingMenu/SidebarItemsCollection",
+                "widgets/limitedList/LimitedList",
+                "widgets/limitedListItem/LimitedListItem",
+                "widgets/SearchInput/SearchInput",
+                "widgets/SharingPermissions/SharingPermissions",
+                "widgets/RestrictChildObjectDialog/RestrictChildObjectDialog"
+            ]
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

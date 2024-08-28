@@ -1,0 +1,10 @@
+{
+  "actionName": "networkexplorer-remove-leaf-collection",
+  "condition": {
+    "dataType": "Collection",
+    "properties": [{
+      "name": "subType",
+      "value":"re:^(?:LEAF|SEARCH_CRITERIA)$"
+    }]
+  }
+}

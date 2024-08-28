@@ -1,0 +1,19 @@
+{
+  "protocol": "http",
+  "host": "netex_jboss",
+  "port": 8080,
+  "headers": {
+    "X-Tor-Application":"networkexplorer",
+    "X-Tor-UserID":"administrator",
+    "X-Proxy-Password":"TestPassw0rd"
+  },
+  "mappings": [
+    {"source": "/managedObjects",          "name": "Topology Search Service"},
+    {"source": "/object-configuration",    "name": "Topology Collections Service"},
+    {"source": "/topologyCollections",     "name": "Topology Collections Service"},
+    {"source": "/network-explorer-import", "name": "Network Explorer Import Service"},
+    {"source": "/modelInfo",               "name": "Model Information Service"},
+    {"source": "/persistentObject",        "name": "Persistent Object Service"},
+    {"source": "/rest",                    "name": "Presentation Server"}
+  ]
+}

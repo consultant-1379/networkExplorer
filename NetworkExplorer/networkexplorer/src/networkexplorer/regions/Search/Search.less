@@ -1,0 +1,70 @@
+.eaNetworkExplorer-rSearch {
+    &_hidden {
+        display: none;
+    }
+
+    min-height: 24px;
+    background: #eee;
+    padding-left: 6px;
+    border-radius: 3px;
+    margin: 12px 0 16px 0;
+    overflow: auto;
+
+    &-form {
+        margin-right: 6px;
+        padding-top: 6px;
+        display: flex;
+        flex-wrap: wrap;
+
+        &-searchInputWrapper {
+            box-sizing: border-box;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            padding: 0 0 6px 0;
+            flex: 1 0 60%;
+            border-width: 0;
+        }
+
+        &-validationErrorIcon {
+            visibility: hidden;
+            margin: 0 2px;
+
+            &_visible {
+                visibility: visible;
+            }
+        }
+
+        &-searchBtn {
+            margin: 0;
+            min-width: 0;
+        }
+
+        &-searchBtn:disabled .eaNetworkExplorer-rSearch-form-searchBtnIcon {
+            background-image: url('@{current-url}/search_black_16px.svg');
+        }
+
+        &-infoIconHolder {
+            display: inline-block;
+            margin: 1px 7px;
+        }
+
+        &-saveExisting {
+            float: right;
+
+            &_hidden {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    .eaNetworkExplorer-rSearch {
+        &-form {
+            &-searchBtnText {
+                display: none;
+            }
+        }
+    }
+}

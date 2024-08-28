@@ -1,0 +1,59 @@
+.eaNetworkExplorer-rSlidingMenu {
+
+    height: inherit;
+    overflow-y: inherit;
+
+    &-favoritesLists {
+        position: relative;
+    }
+
+    &-favoritesLists, &-collectionList, &-savedSearchesList {
+
+        &-header {
+            overflow: auto;  // for Firefox only!
+        }
+
+        &-placeholderText {
+            white-space: normal;
+        }
+
+        &-placeholderText, &-collectionsHeader, &-savedSearchesHeader {
+            display: block;
+            margin-top: 12px;
+            padding: 0 22px;
+        }
+
+        &-errorMessage {
+
+            &-errorIcon {
+              margin-top: 2px;
+              position: absolute;
+            }
+
+            &-body {
+                display: block;
+                margin-top: 12px;
+                padding-left: 22px;
+            }
+        }
+
+        &-starIcon {
+            position: absolute;
+            opacity: .4;
+            margin-top: 8px;
+        }
+
+        &-loadingAnimation {
+            float: right;
+            margin: 0 16px;
+        }
+
+        &-placeholderText, &-collections, &-savedSearches, &-loadingAnimation, &-errorMessage, &-starIcon {
+
+            &_hidden {
+                display: none;
+            }
+        }
+
+    }
+}

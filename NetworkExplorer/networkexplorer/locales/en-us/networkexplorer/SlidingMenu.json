@@ -1,0 +1,8 @@
+{
+    "collections" : "Collections",
+    "savedSearches" : "Saved Searches",
+    "viewAll" : "View All",
+    "favorites" : "Favorites",
+    "favoritesPlaceholderText" : "You have no favorite searches or collections. To Favorite one, just click the star icon next to the item.",
+    "retryingToast" : "Unable to contact server. Retrying…"
+}

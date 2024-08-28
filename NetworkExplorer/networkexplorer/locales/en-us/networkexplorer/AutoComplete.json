@@ -1,0 +1,20 @@
+{
+    "objectTypeKey": "<Object Type>",
+    "objectTypeTitle": "Enter an object type",
+    "objectTypesKey": "<Object Type(s)>",
+    "objectTypesTitle": "Enter one or more object types, separated by commas",
+    "attributeNameKey": "<Attribute Name>",
+    "attributeNameTitle": "Enter an attribute name",
+    "attributeNamesKey": "<Attribute Name(s)>",
+    "attributeNamesTitle": "Enter one or more attribute names, separated by commas",
+    "attributeValueKey": "<Attribute Value>",
+    "attributeValueTitle": "Enter an attribute value",
+    "savedSearchNameKey": "<Saved Search Name>",
+    "savedSearchNameTitle": "Enter a Saved Search name",
+    "collectionNameKey": "<Collection Name>",
+    "collectionNameTitle": "Enter a Collection name",
+    "nodeNameKey": "<Node Name>",
+    "nodeNameTitle": "Enter a node name",
+    "nodeTypeKey": "<Node Type>",
+    "nodeTypeTitle": "Enter a node type"
+}

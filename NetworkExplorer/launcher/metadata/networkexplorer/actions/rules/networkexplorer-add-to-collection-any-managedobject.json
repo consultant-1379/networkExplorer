@@ -1,0 +1,6 @@
+{
+  "actionName": "networkexplorer-add-to-collection",
+  "condition": {
+    "dataType": "ManagedObject"
+  }
+}

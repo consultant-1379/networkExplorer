@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="NetworkExplorer-Tutorials-SavedSearches">
+    <title>Manage Saved Searches</title>
+    <conbody>
+         <section>
+            <title>Locate Saved Search</title>
+            <p>
+                To locate a Saved Search, click on the Saved Search name in the sidebar. The sidebar displays the five
+                most recent Saved Searches created. Clicking on a Saved Search in the sidebar will display the Saved Search
+                details, and populate the results table with the search results. Other Saved Searches can be located by
+                clicking the "View All" link. Here, the Saved Search Management page displays all of the existing Saved Searches
+                that the user is allowed to view. For a detailed description of this page refer to the
+                <xref scope="external" href="#help/app/savedsearchmanagement/topic/ui/savedSearches">Saved Search Management Page</xref> section.
+            </p>
+            <p>
+                Saved Searches can either be saved as public or private. Private Saved Searches can be viewed by
+                the user that created them if they have the capability SavedSearch_Private:read, or by other users who have the capability SavedSearchOthers_Private:read.
+                Public Saved Searches can be viewed by the owner if they have the capability SavedSearch_Public:read, or by other users who have the capability SavedSearchOthers_Public:read.
+                If a public Saved Search has the same name as one of your private Saved Searches, the sidebar will include the sharing
+                permission in brackets after the name of each.
+            </p>
+            <p>
+                Alternatively, the contents of a Saved Search can be returned by entering its name in the search box.
+                Should a private and public Saved Search of the same name exist in the system, the private Saved Search
+                will be returned. Therefore, the process outlined in the paragraph above should be used to return a
+                public Saved Search where a private Saved Search exists of the same name.
+            </p>
+        </section>
+    </conbody>
+</concept>

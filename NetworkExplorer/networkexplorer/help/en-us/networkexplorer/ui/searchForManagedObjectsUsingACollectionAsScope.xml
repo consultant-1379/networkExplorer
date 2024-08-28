@@ -1,0 +1,49 @@
+<concept id="NetworkExplorer-searchForManagedObjectsUsingACollectionAsScope">
+    <title>Search for Managed Objects using a Collection</title>
+    <conbody>
+        <section>
+            <p>
+                To return objects that exist in a specific Collection, as well as any objects under the MOs
+                in the Collection, you can specify the type and Collection name
+                using the following syntax, replacing [TYPE] and [COLLECTION_NAME] with the desired values:
+            </p>
+            <codeblock>
+                [TYPE] using collection [COLLECTION_NAME]
+            </codeblock>
+            <p>
+                For example, to get all EUtranCellFDD objects using as scope a Collection named "dublin_collection"
+                containing only node level objects:
+            </p>
+            <codeblock>
+                EUtranCellFDD <b>using collection</b> dublin_collection
+            </codeblock>
+            <p>
+                You can also use an attribute condition with the Collection syntax, like the following:
+            </p>
+            <codeblock>
+                [TYPE] using collection [COLLECTION_NAME] where [ATTRIBUTE_NAME] [OPERATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                EUtranCellFDD <b>using collection</b> dublin_city_center <b>where</b> eNBId <b>&gt;=</b> 507
+            </codeblock>
+            <p>
+                It is also possible to specify one other MO type in the search:
+            </p>
+            <codeblock>
+                ENodeBFunction, EUtranCellFD <b>using collection</b> dublin_city_center
+            </codeblock>
+            <p>
+                <b>Note:</b> Searches with "using" support only one Collection; so the following queries ar <b>NOT</b> supported:
+            </p>
+            <codeblock>
+                EUtranCellFDD <b>using collection</b> dublin_city_center_A, <b>collection</b> dublin_city_center_B
+            </codeblock>
+            <codeblock>
+                select <b>collection</b> dublin_city_center <b>using collection</b> dublin_collection
+            </codeblock>
+            <p>
+                <b>Note:</b> When searching with the 'using' keyword in a collection with a large number of MOs, the request may time out if the number of MOs exceeds 500.
+            </p>
+        </section>
+    </conbody>
+</concept>

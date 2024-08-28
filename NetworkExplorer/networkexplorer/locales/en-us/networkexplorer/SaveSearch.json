@@ -1,0 +1,11 @@
+{
+    "searchNameLabel": "Search Name",
+    "enterNameLabel": "Enter Name",
+    "saveButtonLabel": "Save",
+    "cancelButtonLabel": "Cancel",
+    "correctErrorsAndTryAgainLabel": "Please correct errors and try again",
+    "nameCannotEqualContentLabel": "The Saved Search name cannot be the same as the search content",
+    "nameRequired": "Search name is required",
+    "unableToSaveSearchLabel": "Unable to Save Search",
+    "ok": "OK"
+}

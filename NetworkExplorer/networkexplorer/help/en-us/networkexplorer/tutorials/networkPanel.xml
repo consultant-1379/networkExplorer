@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="NetworkExplorer-Tutorials-NetworkPanel">
+    <title>Network Panel</title>
+    <conbody>
+        <p>The Network panel contains the Topology, Collections and Saved Searches tabs. Refresh the Network Explorer for
+            latest information in the network panel</p>
+        <image href="../resources/images/networkPanel.JPG"/>
+        <p>Note : Items selected in the Network panel tabs are retained when navigating between the tabs.</p>
+        <section>
+            <title>Topology Tab</title>
+            <p>
+                The topology tab contains subNetworks, nodes, and the All other nodes item. Supported Nodes are found under the
+                All other nodes item unless they are added beneath subNetworks. The Topology tab is used to select the required node(s) or collection of nodes.
+            </p>
+            <p>Note: Click the refresh icon <image href="../resources/images/Refresh.png"/> to fetch the latest list of nodes and/or collections.</p>
+            <p>The <b>Network Panel</b> shows the number of MeContext and ManagedElement child nodes under a <b>SubNetwork</b> or <b>Collection</b>.</p>
+            <p>Find and Locate Node(s) is to search for a node inside a Topology, click on the <image href="../resources/images/search_Icon.PNG"/> icon next to the refresh button.
+                Once the icon is clicked, a search bar and navigation arrow buttons (up and down) will be displayed. Clicking the icon again hides the search bar and the navigation buttons.</p>
+            <image href="../resources/images/Search_Expand.JPG"/>
+            <p>Within the text input, searching nodes by its partial or full name is supported.However, note that the search text is case-sensitive. For example, when searching for a node with the
+                name 'NR01gNodeBRadio00001', 'NR*' may be used.
+            </p>
+            <p>Note the following ways of how partial text search can be used:
+                <ul>
+                    <li>To search for a node with a name starting with 'NR', 'NR*' must be used.</li>
+                    <li>To search for a node with '01' anywhere in the name, then search '01' without the * symbol.</li>
+                </ul>
+            </p>
+            <p>Enter the search text and click on the up/down arrow buttons. When clicked, the first node with the matching text will be located and selected in the specified Topology tree.</p>
+            <image href="../resources/images/Full_Search.PNG"/>
+            <p>If there are multiple nodes found with the given search text, the user can locate them using the up or down arrow buttons.</p>
+            <image href="../resources/images/Partial_Search.PNG"/>
+            <p>
+                From Topology Drop down, select SubNetwork or Node from Network Data or Custom Topology Collection.
+                <ul>
+                    <li>
+                        Select a SubNetwork from the Network Data, the SubNetwork Child Nodes associated to MeContext or ManagedElement are shown in results Page
+                        <image href="../resources/images/SubNetwork_level_child.JPG"/>
+                    </li>
+                    <li>
+                        Select a SubNetwork from the Network Data, the SubNetwork not having direct MeContext or ManagedElement nodes are shown in results Page as below.
+                        <image href="../resources/images/SubNetwork_level.JPG"/>
+                    </li>
+                    <li>
+                        Select a node from the SubNetwork or All other Nodes to display the details in results Page
+                        <image href="../resources/images/SubNetwork_node.JPG"/>
+                    </li>
+                    <li>
+                        Select Collection to display the saved contents in the results page. If no contents, shown as empty.
+                        <image href="../resources/images/Custom_collection.JPG"/>
+                    </li>
+                    <li>
+                        When Apply Recursively check box is selected, the Result table displays every Node under every Collection in the selected collection.
+                        <image href="../resources/images/apply_recursively_Checked.JPG"/>
+                    </li>
+                    <li>
+                        if apply recursively is not selected, direct child nodes of the selected collection will get display in the Result table.
+                        <image href="../resources/images/apply_recursively_UnChecked.JPG"/>
+                    </li>
+                    <li>
+                        if apply recursively is checked, when a object is selected in the result table then 'Remove form this collection' button is not shown
+                        <p></p>
+                        <image href="../resources/images/Remove_from_the_collection_Applyrecursively_checked.JPG"/>
+                    </li>
+                    <li>
+                        if apply recursively is unchecked, when a object is selected in the result table them 'Remove form this collection' button is shown
+                        <p></p>
+                        <image href="../resources/images/Remove_from_the_collection_Applyrecursively_unchecked.JPG"/>
+                    </li>
+                </ul>
+            </p>
+
+            <b>Right Click Actions On Selected Objects</b>
+            <p>
+                Actions enable you to perform operations on network objects. ENM supports actions across all application sets. When objects are selected from the Topology Tab of Network Panel, there are 2 ways to perform actions on them:
+            </p>
+            <p>
+                1. <b>Right click</b> on the object to display a list of all actions in contextMenu that can be performed on that object
+            </p>
+            <p>
+                2. Click the buttons in the Action Bar
+            </p>
+            <p>
+                Actions displayed on the below use cases on Right click event.
+            </p>
+            <ul>
+                <li>SubNetwork from Network Data hierarchy under Topology tab of Network Panel</li>
+                <li>Node from Network Data hierarchy under from Topology tab of Network Panel</li>
+                <li>Child MO from Network Data hierarchy under Topology tab of Network Panel</li>
+                <li>Collection from Transport Topology tree under Topology Tab from Network Panel</li>
+                <li>Hybrid Collection from Transport Topology tree under Topology Tab from Network Panel</li>
+            </ul>
+            <b><u>SubNetwork  from NetworkData Hierarchy</u></b>
+            <p>
+                On right clicking the SubNetwork in the Network Data of Topology tab from Network Panel, the following actions will be displayed along with the object details from the selected subNetwork in main panel result table:
+            </p>
+            <ul>
+                <li>Monitor Alarms</li>
+                <li>Add to a Collection</li>
+                <li>View Cells</li>
+            </ul>
+            <p>
+                <b>Note:</b> The five most recent performed actions are displayed in the <b>Recent</b> menu.
+            </p>
+            <p>
+                <image href="../resources/images/TopologyTabSubNetwork.JPG"/>
+            </p>
+            <b><u>Node from NetworkData Hierarchy</u></b>
+            <p>
+                On right clicking the node in the Network Data of Topology tab from Network Panel, the following actions will be displayed along with the object details in main panel result table:
+            </p>
+            <ul>
+                <li>Add to a Collection</li>
+                <li>Monitor Alarms</li>
+                <li>Monitor this Node</li>
+                <li>Run Node Health Check</li>
+                <li>Initiate CM Sync</li>
+                <li>Edit State</li>
+                <li>View Cells</li>
+                <li>View Software Inventory</li>
+                <li>View License Inventory</li>
+                <li>View Hardware Inventory</li>
+                <li>View Backup Inventory</li>
+                <li>Upgrade Node Software</li>
+                <li>Restart Node</li>
+                <li>Backup Node</li>
+                <li>Manage Links</li>
+                <li>Create Link</li>
+                <li>Delete All Links</li>
+                <li>Delete Node</li>
+                <li>Disable Supervision</li>
+                <li>Enable Supervision</li>
+                <li>Launch Element Manager</li>
+                <li>Launch Element Manager (CLI)</li>
+                <li>Launch AMOS</li>
+                <li>Launch Node CLI</li>
+            </ul>
+            <p>
+                <b>Note:</b> The five most recent performed actions are displayed in the <b>Recent</b> menu.
+            </p>
+            <p>
+                <image href="../resources/images/TopologyTabNode.JPG"/>
+            </p>
+            <p>
+                Some actions such as <b>Locate in Topology</b> only support a single MO. Other actions such
+                as <b>Launch AMOS</b> and <b>Launch Element Manager</b> only support node level objects like
+                NetworkElement, MeContext and ManagedElement.
+            </p>
+            <p>
+                All objects are not supported by all applications. If the selected object is not supported try the following:
+            </p>
+            <ul>
+                <li>
+                    Refine your search. For example:
+                    <ul>
+                        <li>
+                            select all objects of type NetworkElement where NetworkElement has child CmFunction and CmFunction
+                            has attr syncStatus = SYNCHRONIZED from node type ERBS
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    It is also possible to use Topology Browser to find the root object and launch the required application
+                    from Topology Browser, by performing the following steps:
+                    <ul>
+                        <li>
+                            In Network Explorer, right click on an object, then click <b>Locate in Topology</b>
+                            in the <b>Action Bar/ contextMenu</b>. The object you have selected in Network Explorer will be highlighted
+                            in Topology Browser. Scroll up until you reach the root object. The root object will
+                            be a node level object such as NetworkElement, MeContext or ManagedElement. Click the
+                            root object, then click the required action from the <b>Action Bar</b>.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                If some actions are temporarily unavailable, a warning message is displayed.
+            </p>
+            <b><u>Node from Transport Topology Hierarchy</u></b>
+            <p>
+                On right clicking the node in the Transport Topology collection of Topology tab from Network Panel, the following actions will be displayed along with the object details in main panel result table. "Move to Collection" button enabled in case of user select Node from Transport Topology Hierarchy:
+            </p>
+            <ul>
+                <li>Add to a Collection</li>
+                <li>Move to Collection</li>
+                <li>Monitor Alarms</li>
+                <li>Monitor this Node</li>
+                <li>Run Node Health Check</li>
+                <li>Initiate CM Sync</li>
+                <li>Edit State</li>
+                <li>View Cells</li>
+                <li>View Software Inventory</li>
+                <li>View License Inventory</li>
+                <li>View Hardware Inventory</li>
+                <li>View Backup Inventory</li>
+                <li>Upgrade Node Software</li>
+                <li>Restart Node</li>
+                <li>Backup Node</li>
+                <li>Manage Links</li>
+                <li>Create Link</li>
+                <li>Delete All Links</li>
+                <li>Delete Node</li>
+                <li>Disable Supervision</li>
+                <li>Enable Supervision</li>
+                <li>Launch Element Manager</li>
+                <li>Launch Element Manager (CLI)</li>
+                <li>Launch AMOS</li>
+                <li>Launch Node CLI</li>
+            </ul>
+            <p>
+                <b>Note:</b> The five most recent performed actions are displayed in the <b>Recent</b> menu.
+            </p>
+            <p>
+                <image href="../resources/images/moveToCollectionDisabled.JPG"/>
+            </p>
+            <p>
+                Some actions such as <b>Locate in Topology</b> only support a single MO. Other actions such
+                as <b>Launch AMOS</b> and <b>Launch Element Manager</b> only support node level objects like
+                NetworkElement, MeContext and ManagedElement.
+            </p>
+            <p>
+                All objects are not supported by all applications. If the selected object is not supported try the following:
+            </p>
+            <ul>
+                <li>
+                    Refine your search. For example:
+                    <ul>
+                        <li>
+                            select all objects of type NetworkElement where NetworkElement has child CmFunction and CmFunction
+                            has attr syncStatus = SYNCHRONIZED from node type ERBS
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    It is also possible to use Topology Browser to find the root object and launch the required application
+                    from Topology Browser, by performing the following steps:
+                    <ul>
+                        <li>
+                            In Network Explorer, right click on an object, then click <b>Locate in Topology</b>
+                            in the <b>Action Bar/ contextMenu</b>. The object you have selected in Network Explorer will be highlighted
+                            in Topology Browser. Scroll up until you reach the root object. The root object will
+                            be a node level object such as NetworkElement, MeContext or ManagedElement. Click the
+                            root object, then click the required action from the <b>Action Bar</b>.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                If some actions are temporarily unavailable, a warning message is displayed.
+            </p>
+            <b><u>Child MO from NetworkData Hierarchy</u></b>
+            <p>
+                On right clicking on the Child MO in the Network Data of Topology tab from Network Panel, the following actions will be displayed along with the selected child MO details in main panel result table:
+            </p>
+            <ul>
+                <li>Monitor Alarms</li>
+                <li>Add to a Collection</li>
+            </ul>
+            <p>
+                <b>Note:</b> The five most recent performed actions are displayed in the <b>Recent</b> menu.
+            </p>
+            <p>
+                <image href="../resources/images/TopologyTabChildMO.JPG"/>
+            </p>
+
+            <b><u>Collection from Transport Topology Tree</u></b>
+            <p>
+                On right clicking on Collection in the Trasnport Topology of Topology tab from Network Panel, the following actions will be displayed along with the object details from the selected collection in main panel result table:
+            </p>
+            <ul>
+                <li>Monitor Alarm</li>
+                <li>Run Node Health Check</li>
+                <li>Create Collection</li>
+                <li>Export Collection</li>
+                <li>Add Topology Data</li>
+                <li>Rename</li>
+                <li>Remove from Collection</li>
+                <li>Delete</li>
+            </ul>
+            <p>
+                <b>Note:</b> The five most recent performed actions are displayed in the <b>Recent</b> menu.
+            </p>
+            <p>
+                <image href="../resources/images/TransportTopologyCollection.JPG"/>
+            </p>
+
+            <b><u>Hybrid Collection from Transport Topology Tree</u></b>
+            <p>
+                On right clicking on hybrid Collection in the Trasnport Topology of Topology tab from Network Panel, the following actions will be displayed along with the object details from the selected collection in main panel result table:
+            </p>
+            <ul>
+                <li>Monitor Alarm</li>
+                <li>Create Collection</li>
+                <li>Create Private Network</li>
+                <li>Export Topology</li>
+                <li>Add Topology Data</li>
+                <li>Rename</li>
+                <li>Delete</li>
+            </ul>
+            <p>
+                <b>Note:</b> The five most recent performed actions are displayed in the <b>Recent</b> menu.
+            </p>
+            <p>
+                <image href="../resources/images/TransportTopology-Hybrid_Collection.JPG"/>
+            </p>
+        </section>
+        <section>
+            <title>Collections Tab</title>
+            <p>
+                The Collection tab displays a list of available collections, only one collection can be selected. When the collection is selected
+                the contents saved are displayed in the results page and by selecting check box, the details of the selected node
+                from results will be shown in the Details Panel.
+            </p>
+            <image href="../resources/images/collection_tab.png"/>
+            <p>
+                The following filters can be applied to the list of collections:
+                <ul>
+                    <li>
+                        The All button lists all available collections.
+                    </li>
+                    <li>
+                        The Public button lists all public collections.
+                    </li>
+                    <li>
+                        The Private button lists all private collections.
+                    </li>
+                    <li>
+                        The input box beside the filter buttons enables you to filter by name.
+                    </li>
+                    <li>
+                        The Favorites button enables you to filter collections marked as favorite.
+                    </li>
+                </ul>
+            </p>
+            <p>The Collection table can be refreshed by clicking the refresh icon <image href="../resources/images/Refresh.png"/>.This is displayed in the top right hand corner of the table. visible in the top right hand corner of the table.</p>
+        </section>
+        <section>
+            <title>Saved Searches Tab</title>
+            <p>
+                The Saved Searches tab displays a list of all available saved search queries, only one saved search can be selected. When the saved search is selected
+                the contents applicable to the search are displayed in the results page and by selecting check box, the details of the selected node
+                from results will be shown in the Details Panel.
+            </p>
+            <image href="../resources/images/savedsearch_tab.png"/>
+            <p>
+                The following filters can be applied to the list of saved searches:
+                <ul>
+                    <li>
+                        The All button lists all available saved searches.
+                    </li>
+                    <li>
+                        The Public button lists all public saved searches.
+                    </li>
+                    <li>
+                        The Private button lists all private saved searches.
+                    </li>
+                    <li>
+                        The input box beside the filter buttons enables you to filter by name.
+                    </li>
+                    <li>
+                        The Favorites button enables you to filter saved searches marked as favorite.
+                    </li>
+                </ul>
+            </p>
+            <p>The Saved search management table will display newly created Saved searches when you click the Refresh Button. </p>
+        </section>
+
+    </conbody>
+</concept>

@@ -1,0 +1,67 @@
+<concept id="NetworkExplorer-searchForManagedObjectsWithAChild">
+    <title>Searching for Managed Objects where a Managed Object has a Child</title>
+    <conbody>
+        <section>
+            <p>
+                To return specific children of a managed object, you can specify child and parent
+                types using the following syntax, replacing [PARENT MO TYPE] and [CHILD MO TYPE] with the desired types:
+            </p>
+            <codeblock>
+                [TYPE] where [PARENT MO TYPE] has child [CHILD MO TYPE]
+            </codeblock>
+            <p>
+                The shorthand version to return specific children of a managed object omits the child keyword, you can
+                specify child and parent
+                types using the following syntax, replacing [PARENT MO TYPE] and [CHILD MO TYPE] with the desired types:
+            </p>
+            <codeblock>
+                [TYPE] where [PARENT MO TYPE] has [CHILD MO TYPE]
+            </codeblock>
+            <p>
+                [TYPE] can be either [PARENT MO TYPE] or [CHILD MO TYPE]. [CHILD MO TYPE] can be either child or
+                grandchild of [PARENT MO TYPE]. For example:
+            </p>
+            <codeblock>
+                ENodeBFunction where ENodeBFunction has child EUtranCellFDD
+            </codeblock>
+            <p>
+                Specify multiple children using the following syntax:
+            </p>
+            <codeblock>
+                [TYPE] where [PARENT MO TYPE] has child [CHILD MO TYPE] and [CHILD MO TYPE] has child [GRAND
+            </codeblock>
+            <codeblock>
+                ENodeBFunction where ENodeBFunction has child EUtranCellFDD and EUtranCellFDD has child EUtranFreqRelation
+            </codeblock>
+            <p>
+                Search child and parent Managed Objects by attributes and name using the following syntax:
+            </p>
+            <codeblock>
+                [TYPE] where [PARENT MO TYPE] has child [CHILD MO TYPE] and object [PARENT MO TYPE] has attr [ATTRIBUTE_NAME] [OPERATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                ENodeBFunction where ENodeBFunction has child EUtranCellFDD and object ENodeBFunction has attr ENodeBFunctionId = ID2
+            </codeblock>
+            <p>
+                You can shorten the syntax when searching for an attribute of a child using the keyword WITH.
+            </p>
+            <codeblock>
+                [TYPE] where [PARENT MO TYPE] has child [CHILD MO TYPE] with [ATTRIBUTE_NAME] [OPERATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                EUtranCellRelation where EUtranCellFDD <b>has child</b> EUtranCellRelation with name = Cell1
+            </codeblock>
+            <p>
+                The longer version of the query to get all EUtranCellRelations which are children of EUtranCellFDD is
+                the
+                following:
+            </p>
+            <codeblock>
+                EUtranCellRelation where EUtranCellFDD <b>has child</b> EUtranFreqRelation and EUtranFreqRelation <b>has child</b> EUtranCellRelation and EUtranCellRelation has attr name=Cell1
+            </codeblock>
+            <p>
+                You also can search by multiple children. Network Explorer supports up to 5 levels.
+            </p>
+        </section>
+    </conbody>
+</concept>

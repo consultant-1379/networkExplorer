@@ -1,0 +1,353 @@
+<concept id="NetworkExplorer-searchForManagedObjectsUsingAttributesAndComparators">
+    <title>Search for Managed Objects using the Search Field</title>
+    <conbody>
+        <ul>
+            <li>
+                <xref type="task" href="#attribute">Search for Managed Objects with Attributes and Comparators</xref>
+            </li>
+            <li>
+                <xref type="task" href="#listAttribute">Search for Managed Objects with List Attributes and Comparators</xref>
+            </li>
+            <li>
+                <xref type="task" href="#structAttribute">Search for Managed Objects with Struct Attributes</xref>
+            </li>
+        </ul>
+        <section id="attribute">
+            <title>Search for Managed Objects with Attributes and Comparators</title>
+            <p>
+                Searching by attributes is very similar to searching by name. Attributes that you search for will be
+                displayed in the results table.
+            </p>
+            <p>
+                You can employ a range of different comparators, using either long hand or short hand versions, for example:
+            </p>
+            <p>
+                <simpletable>
+                    <sthead>
+                        <stentry>Long Hand</stentry>
+                        <stentry>Short Hand</stentry>
+                    </sthead>
+                    <strow>
+                        <stentry>equal to</stentry>
+                        <stentry>=</stentry>
+                    </strow>
+                    <strow>
+                        <stentry>not equal to</stentry>
+                        <stentry>!=</stentry>
+                    </strow>
+                    <strow>
+                        <stentry>less than or equal to</stentry>
+                        <stentry><![CDATA[<]]>=</stentry>
+                    </strow>
+                    <strow>
+                        <stentry>greater than or equal to</stentry>
+                        <stentry><![CDATA[>]]>=</stentry>
+                    </strow>
+                </simpletable>
+            </p>
+            <p>
+                You can filter by attribute value.
+            </p>
+            <p>
+                For Example - to get all ENodeBFunction cells with eNBId = 507:
+            </p>
+            <codeblock>
+                [TYPE] [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                ENodeBFunction eNBId <b>=</b> 507
+            </codeblock>
+            <p>
+                or long hand version:
+            </p>
+            <codeblock>
+                select ENodeBFunction where object ENodeBFunction has attr eNBId <b>equal to</b> 507
+            </codeblock>
+            <p>
+                You can also chain comparators together like this:
+            </p>
+            <codeblock>
+                ENodeBFunction eNBId <b>&gt;=</b> 506
+            </codeblock>
+            <p>
+                or
+            </p>
+            <codeblock>
+                select ENodeBFunction where object ENodeBFunction has attr eNBId<b> greater than or equal to</b> 506
+            </codeblock>
+            <p>
+                You can also search using multiple attributes by chaining them with the "and" keyword. These keywords must be lowercase, ie:
+                "AND" will give you an error. Up to 10 attributes chained with "and" are supported. This means a maximum of 9 "and" keywords per query.
+            </p>
+            <codeblock>
+                [TYPE] [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE] and [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                ENodeBFunction eNBId <b>&gt;=</b> 506 and dnsLookupTimer <b>&lt;=</b> 500
+            </codeblock>
+            <p>
+                or
+            </p>
+            <codeblock>
+                [TYPE] where object [TYPE] has attr [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE] and [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                ENodeBFunction where object ENodeBFunction has attr eNBId <b>greater than or equal to 506</b> and dnsLookupTimer <b>less than or equal to</b> 500
+            </codeblock>
+            <p>
+                Each attribute chained with the "or" keyword requires the "attr" keyword preceding the attribute.
+            </p>
+            <codeblock>
+                ENodeBFunction where object ENodeBFunction has attr eNBId <b>greater than or equal to 506</b> or attr dnsLookupTimer <b>less than or equal to</b> 500
+            </codeblock>
+            <p>
+                You can also search using multiple attributes by chaining them with commas.
+            </p>
+            <codeblock>
+                [TYPE] with attr [ATTRIBUTE_NAME], [ATTRIBUTE_NAME], [ATTRIBUTE_NAME]
+            </codeblock>
+            <codeblock>
+                ENodeBFunction with attr eNBId, dnsLookupTimer, dscpLabel
+            </codeblock>
+            <p>
+                If you are writing a query with chained attributes, and wish to switch to using object, it must
+                be preceded by the "object" keyword.
+            </p>
+            <codeblock>
+                [TYPE] with attr [ATTRIBUTE_NAME], [ATTRIBUTE_NAME], object [TYPE]
+            </codeblock>
+            <codeblock>
+                ENodeBFunction with attr eNBId, dnsLookupTimer, object EUtranCellFDD
+            </codeblock>
+            <p>
+                The comparators "equal to", and "=" can all be used interchangeably, returning the same result.
+            </p>
+            <codeblock>
+                [TYPE] [ATTRIBUTE_NAME] = [ATTRIBUTE_VALUE] and [ATTRIBUTE_NAME] equal to [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                ENodeBFunction where eNBId <b>=</b> 507 and dnsLookupTimer <b>equal to</b> 500
+            </codeblock>
+            <p>
+                The comparators "not equal to", and "!=" can all be used interchangeably, returning the same result.
+            </p>
+            <codeblock>
+                [TYPE] [ATTRIBUTE_NAME] != [ATTRIBUTE_VALUE] and [ATTRIBUTE_NAME] not equal to [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                ENodeBFunction where eNBId <b>!=</b> 507 and dnsLookupTimer <b>not equal to</b> 500
+            </codeblock>
+            <p>
+                Searching by attributes also supports the wildcard operator at the start and/or end of the attribute
+                value. For example, if you wanted all ENodeBFunction objects that
+                have a userLabel starting with "Test", you would use the following query:
+            </p>
+            <codeblock>
+                ENodeBFunction where userLabel=Test*
+            </codeblock>
+            <p>
+                To get all ENodeBFunction objects with the characters "Test" in the userLabel, you would use the
+                following query:
+            </p>
+            <codeblock>
+                ENodeBFunction where userLabel=*Test*
+            </codeblock>
+            <p>
+                There is a maximum of 3 wildcard value searches per search execution.
+            </p>
+            <p>
+                String values containing spaces or special characters should be enclosed within double quotes.
+            </p>
+            <p>
+                <b>For example:</b>
+            </p>
+            <codeblock>
+                EUtranCellFDD userLabel =<b>"Dublin Operator"</b>
+            </codeblock>
+            <p>
+                The long hand version of the <b>attribute</b> syntax is as follows:
+            </p>
+            <codeblock>
+                select [TYPE] where object [TYPE] has attr [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <p>
+                <b>Non Persisted Attributes</b>
+            </p>
+            <p>
+                Non Persisted Attributes are attributes which exist in the node but are not persisted locally to the
+                database.
+            </p>
+            <p>
+                Therefore these attributes can be read but not queried by Network Explorer.
+            </p>
+            <p>
+                <b><i>Or</i> Keyword queries</b>
+            </p>
+            <p>
+                You can use the <i>or</i> conjunction to join together separate attribute criteria's when executing a search.
+                Using the or keyword will allow you to search for Objects that apply to one restriction or another instead of applying to both.
+            </p>
+            <p>
+                For Example: Use the following to search for an object with name ERBS001 OR ERBS002.
+            </p>
+            <codeblock>
+                select [TYPE] where object [TYPE] has attr [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE] or [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                select ManagedElement where object ManagedElement has attr name = ERBS001 <b>or</b> name = ERBS002
+            </codeblock>
+            <p>
+                The or keyword can be used multiple times.
+            </p>
+            <codeblock>
+                select [TYPE] where object [TYPE] has attr [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE] or [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE] or [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                select ManagedElement where object ManagedElement has attr name = ERBS001 <b>or</b> name = ERBS002 <b>or</b> name = ERBS003
+            </codeblock>
+            <p>
+                When both the and keyword and or keyword conjunctions are used together, the criteria's are split on the or keyword.
+            </p>
+            <p>
+                For Example: Use the following to search for a Managed Object that has certain combinations of name and label.
+            </p>
+            <codeblock>
+                select [TYPE] where object [TYPE] has attr [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE] and [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE] or [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE] and [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                select ManagedElement where object ManagedElement has attr name = ERBS001 <b>and</b> userLabel = ERBS001_Label <b>or</b> name = ERBS002 <b>and</b> userLabel = ERBS002_Label
+            </codeblock>
+            <p>
+                This query will return any ManagedElement's named ERBS001 with label ERBS001_Label. It will also return any ManagedElement's named ERBS002 with label ERBS002_Label.
+            </p>
+            <p>
+                <b>
+                    Queries containing duplicate ENUM member values
+                </b>
+            </p>
+            <p>
+                YANG based nodes may contain ManagedObjects having attributes with duplicate ENUM members values and these values belong to
+                different namespace. This namespace should be prefixed for the duplicate member value.
+            </p>
+            <p>
+                For Example: Use the following to search for Managed Objects having attributes with duplicate ENUM members for specific node type.
+            </p>
+            <codeblock>
+                select all objects of type [TYPE] where [TYPE] has attr type = [NAMESPACE]$$$[VALUE] from node type [NODE_TYPE]
+            </codeblock>
+            <codeblock>
+                select all objects of type interfaces$$interface where interfaces$$interface has attr type = urn:ietf:params:xml:ns:yang:iana-if-type$$$ethernetCsmacd from node type PCG
+            </codeblock>
+            <p>
+                If no namespace is given before duplicate value, an error is thrown showing all possible values for that value.
+            </p>
+        </section>
+        <section id="listAttribute">
+            <title>Search for Managed Objects with List Attributes and Comparators</title>
+            <p>
+                Searching by list attributes is very similar to searching by name. Searched Attributes are
+                displayed in the results table.
+            </p>
+            <p>
+                For list attributes, use the following comparators:
+            </p>
+            <p>
+                <simpletable>
+                    <sthead>
+                        <stentry>Single Value</stentry>
+                        <stentry>Multiple Values</stentry>
+                    </sthead>
+                    <strow>
+                        <stentry>contains</stentry>
+                        <stentry>contains any of</stentry>
+                    </strow>
+                    <strow>
+                        <stentry>containing</stentry>
+                        <stentry>containing any of</stentry>
+                    </strow>
+                    <strow>
+                        <stentry> </stentry>
+                        <stentry>contains all of</stentry>
+                    </strow>
+                    <strow>
+                        <stentry> </stentry>
+                        <stentry>containing all of</stentry>
+                    </strow>
+                </simpletable>
+            </p>
+            <p>
+                Managed objects can by filtered by attribute values.
+            </p>
+            <p>
+                For Example - to get all networkElement cells with radioAccessTechnology containing 4G:
+            </p>
+            <codeblock>
+                [TYPE] [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                networkElement radioAccessTechnology <b>containing</b> 4G
+            </codeblock>
+            <p>
+                or long hand version:
+            </p>
+            <codeblock>
+                select networkElement where object networkElement has attr radioAccessTechnology <b>containing</b> 4G
+            </codeblock>
+            <p>
+                You can also search using multiple values by using "any of" or "all of" and [ATTRIBUTE_VALUES]. [ATTRIBUTE_VALUES] stands for more than one
+                comma separated value.
+            </p>
+            <codeblock>
+                [TYPE] [ATTRIBUTE_NAME] [COMPARATOR] [ATTRIBUTE_VALUES]
+            </codeblock>
+            <codeblock>
+                NetworkElement radioAccessTechnology <b>contains any of</b> 5G,3G
+            </codeblock>
+            <p>
+                The comparators "contains", and "containing" can all be used interchangeably, returning the same result.
+            </p>
+            <codeblock>
+                [TYPE] [ATTRIBUTE_NAME] contains [ATTRIBUTE_VALUE] and [ATTRIBUTE_NAME] containing [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                networkElement where radioAccessTechnology <b>contains</b> 5G and technologyDomain <b>containing</b> EPS
+            </codeblock>
+            <p>
+                The comparators "contains any of", and "containing any of" can all be used interchangeably, returning the same result.
+            </p>
+            <codeblock>
+                [TYPE] [ATTRIBUTE_NAME] contains any of [ATTRIBUTE_VALUE] and [ATTRIBUTE_NAME] containing any of [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                networkElement where radioAccessTechnology <b>contains any of</b> 4G,5G and technologyDomain <b>containing any of</b> EPS,5GS
+            </codeblock>
+            <p>
+                The same applies for "contains any of" and "contains all of".
+            </p>
+        </section>
+        <section id="structAttribute">
+            <title>Search for Managed Objects with Struct Attributes</title>
+            <p>
+                Some Managed Objects contain struct attributes with nested child attributes.
+            </p>
+            <p>
+                You can construct a search using these struct attributes and set restrictions on their members.
+            </p>
+            <codeblock>
+                select [TYPE] where [STRUCT[MEMBER]] = [ATTRIBUTE_VALUE]
+            </codeblock>
+            <p>
+                For Example: Use the following the command to fetch Managed Elements with a struct attribute restriction
+            </p>
+            <codeblock>
+                select ManagedElement where <b>healthCheckResult[healthCheckResultCode]</b> = ABORTED
+            </codeblock>
+            <p>
+                In this example, the value ABORTED is being applied to the child attribute <i>healthCheckResultCode</i> (which is a child under the struct member <i>healthCheckResult</i>).
+            </p>
+            <note><b>Note:</b> Queries containing Nested Complex Attributes are not supported using either Search or the Criteria Builder.
+                For example, it is not possible to query on struct members inside a list of structs.
+            </note>
+        </section>
+    </conbody>
+</concept>

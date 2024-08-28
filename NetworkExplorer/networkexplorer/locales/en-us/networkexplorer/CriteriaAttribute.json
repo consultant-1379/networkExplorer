@@ -1,0 +1,22 @@
+{
+    "value": "Value",
+    "true": "true",
+    "false": "false",
+    "selectValue": "Select Value",
+    "selectValueError": "A value must be selected from the list",
+    "selectAttribute": "Attribute",
+    "noAttributeSelected": "No Attribute selected",
+    "numberRangeError": "Value must match { $1 }",
+    "stringLengthError": "Value length must match { $1 }",
+    "numberGreaterThanError": "Must be a number greater than $1",
+    "numberLessThanError": "Must be a number less than $1",
+    "valueMustContainDigits": "Value must also contain digits",
+    "valueMustBeOfTypeError": "Value must be of type $1",
+    "andConjunction": "And",
+    "orConjunction": "Or",
+    "invalidAttribute": "Invalid Attribute",
+    "invalidModel": "Invalid Model",
+    "incompatible": "Criteria removed due to incompatibilities introduced",
+    "addMoreCriteria": "Add More Criteria",
+    "anyValue": "Any Value"
+}

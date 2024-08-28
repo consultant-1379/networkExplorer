@@ -1,0 +1,10 @@
+{
+  "actionName": "networkexplorer-export-topology",
+  "condition": {
+    "dataType": "Collection",
+    "properties": [{
+      "name": "subType",
+      "value":"BRANCH"
+    }]
+  }
+}

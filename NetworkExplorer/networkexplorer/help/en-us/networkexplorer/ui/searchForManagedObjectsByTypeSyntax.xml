@@ -1,0 +1,40 @@
+<concept id="NetworkExplorer-searchForManagedObjectByType">
+    <title>Search for Managed Objects by Type</title>
+    <conbody>
+        <section>
+            <p>
+                To select Managed Objects you must first specify a type. To do this, use the following syntax,
+                replacing [TYPE] with an actual managed object type:
+            </p>
+            <codeblock>
+                [TYPE]
+            </codeblock>
+            <p>
+                For example, to return all Managed Objects of type ManagedElement, use the following query:
+            </p>
+            <codeblock>
+                ManagedElement
+            </codeblock>
+            <p>
+                To search for a Managed Object by type with attributes use the following syntax:
+            </p>
+            <codeblock>
+                select all objects of type [TYPE] where [ATTRIBUTE_NAME] [OPERATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <p>
+                For example: to return all Managed Objects of type ManagedElement where the site is Dublin:
+            </p>
+            <codeblock>
+                select all objects of type ManagedElement where site = "Dublin"
+            </codeblock>
+            <p>
+                <b>Note:</b>
+                When you specify the same attribute, or any alias for that attribute
+                (e.g. name as an alias for MeContextId of the MeContext MO), more than once with an AND and EQUALS
+                operators,
+                the attribute value specified latest in the query will override the values previously assigned to
+                that attribute.
+            </p>
+        </section>
+    </conbody>
+</concept>

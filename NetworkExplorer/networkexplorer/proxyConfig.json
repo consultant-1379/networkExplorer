@@ -1,0 +1,67 @@
+{
+  "protocol": "https",
+  "host": "enmapache.athtem.eei.ericsson.se",
+  "port": 443,
+  "headers": {
+    "X-Tor-UserID":"administrator",
+    "X-Proxy-Password":"TestPassw0rd",
+    "X-Tor-Application": "networkexplorer"
+  },
+  "mappings": [{
+    "source": "/editprofile"
+  },{
+    "source": "/managedObjects"
+  },{
+    "source": "/modelInfo"
+  },{
+    "source": "/object-configuration"
+  },{
+    "source": "/network-explorer-import"
+  },{
+    "source": "/topologyCollections"
+  },{
+    "source": "/persistentObject"
+  },{
+    "source": "/rest"
+  },{
+    "source": "/help-search"
+  },{
+    "source": "/oss"
+  },{
+    "source": "/element-manager-services"
+  },{
+    "source": "/main"
+  },{
+    "source": "/autocellid-services"
+  },{
+    "source": "/web-push"
+  },{
+    "source": "/UserProfileMenu"
+  },{
+    "source": "/locales/en-us/UserProfileMenu/"
+  },{
+    "source": "/enmcontainerhelper"
+  },{
+    "source": "/locales/en-us/enmcontainerhelper/"
+  },{
+    "source": "/helpbutton"
+  },{
+    "source": "/locales/en-us/helpbutton/"
+  },{
+    "source": "/systemtime"
+  },{
+    "source": "/locales/en-us/systemtime/"
+  },{
+    "source": "/flyout"
+  },{
+    "source": "/locales/en-us/flyout/"
+  },{
+    "source": "/contextmenu"
+  },{
+    "source": "/locales/en-us/contextmenu/"
+  },{
+    "source": "/systemidentifier"
+  },{
+    "source": "/locales/en-us/systemidentifier/"
+  }]
+}

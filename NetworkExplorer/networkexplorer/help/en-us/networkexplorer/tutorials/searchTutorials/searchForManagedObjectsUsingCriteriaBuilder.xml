@@ -1,0 +1,64 @@
+<task id="NetworkExplorer-searchForManagedObjectUsingCriteriaBuilder">
+    <title>Search for Managed Objects using Criteria Builder</title>
+    <taskbody>
+        <prereq>
+            <ul>
+                <li>
+                    You have appropriate access rights for your required actions.
+                </li>
+            </ul>
+        </prereq>
+        <context>
+            <p>
+                <b>Objective</b>
+            </p>
+            <p>
+                This tutorial describes the steps required to search for a Managed Object(s) using Criteria Builder.
+                <b>Outline</b>
+            </p>
+            <ol>
+                <li>
+                    <xref type="task" href="#1">Build your query using Criteria Builder</xref>
+                </li>
+                <li>
+                    <xref type="task" href="#2">Click Search</xref>
+                </li>
+            </ol>
+        </context>
+        <steps>
+            <step id="1">
+                <cmd>Build Search Query</cmd>
+                <info>
+                    <ol>
+                        <li>Launch
+                            <xref href="#networkexplorer" scope="external">Network Explorer</xref>.
+                        </li>
+                        <li>
+                            Click 'Switch to <b>Criteria Builder</b>'.
+                        </li>
+                        <li>
+                            Build your Query using the <xref href="../../ui/criteriaBuilder.xml" type="concept">Criteria
+                            Builder
+                        </xref> dropdown menus.
+                        </li>
+                    </ol>
+                </info>
+            </step>
+            <step id="2">
+                <cmd>Execute Search</cmd>
+                <info>
+                    <ol>
+                        <li>
+                            Click <b>Search</b>.
+                        </li>
+                    </ol>
+                </info>
+            </step>
+        </steps>
+        <result>
+            <p>
+                The search results are displayed in the <b>Results</b> table.
+            </p>
+        </result>
+    </taskbody>
+</task>

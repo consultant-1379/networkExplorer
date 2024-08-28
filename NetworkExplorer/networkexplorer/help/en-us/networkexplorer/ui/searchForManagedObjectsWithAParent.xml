@@ -1,0 +1,61 @@
+<concept id="NetworkExplorer-searchForManagedObjectsWithAParent">
+    <title>Searching for Managed Objects where a Managed Object has a Parent</title>
+    <conbody>
+        <section>
+            <p>
+                To query for Managed Objects with a specific parent type, use the following syntax, replacing
+                [TYPE] with the desired object type, and [PARENT_TYPE] with the desired parent type:
+            </p>
+            <codeblock>
+                [TYPE] where object [TYPE] has parent [PARENT_TYPE]
+            </codeblock>
+            <p>
+                For example, to search for all EUtranCellFDD cells with an ENodeBFunction parent, the following query
+                could be used:
+            </p>
+            <codeblock>
+                EUtranCellFDD where EUtranCellFDD <b>has parent</b> ENodeBFunction
+            </codeblock>
+            <p>
+                You can also filter parents by attributes and name using the following syntax:
+            </p>
+            <codeblock>
+                [TYPE] where object [TYPE] has parent [PARENT] and object [PARENT] has attr [ATTRIBUTE_NAME] [OPERATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <p>
+                For example to search for all ManagedElement objects which have MeContext parents which have an
+                MeContextId of 1, the following query could be used:
+            </p>
+            <codeblock>
+                ManagedElement where object ManagedElement <b>has parent</b> MeContext and object MeContext <b>has attr</b>
+            </codeblock>
+            <p>
+                You can also shorten the syntax using the keyword WITH.
+            </p>
+            <codeblock>
+                [TYPE] where object [TYPE] has parent [PARENT] with [ATTRIBUTE_NAME] [OPERATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                ManagedElement where object ManagedElement <b>has parent</b> MeContext <b>with</b> MeContextId = 1
+            </codeblock>
+            <p>
+                You can search by multiple parents, Network Explorer supports up to 5 levels.
+            </p>
+            <p>
+                The long hand version of the
+                <b>parent</b>
+                syntax is as follows:
+            </p>
+            <codeblock>
+                [TYPE] where object [TYPE] has parent [PARENT_TYPE_LEVEL_1] and object [PARENT_TYPE_LEVEL_1] has parent [PARENT_TYPE_LEVEL_2]
+            </codeblock>
+            <p>
+                For example to search for all ENodeBFunction objects which have ManagedElement parents and the
+                ManagedElement objects have MeContext parents, the following query could be used:
+            </p>
+            <codeblock>
+                ENodeBFunction where object ENodeBFunction has parent ManagedElement and object ManagedElement has parent MeContext
+            </codeblock>
+        </section>
+    </conbody>
+</concept>

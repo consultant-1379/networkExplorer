@@ -1,0 +1,35 @@
+.eaNetworkExplorer-wLimitedListItem {
+    display: block;
+    overflow: hidden;
+
+    &-link {
+        float: left;
+        max-width: calc(~'100% - 26px');
+        color: #333;
+        padding: 6px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: pre;
+
+        &:hover {
+            color: #333;
+        }
+    }
+
+    &-favoriteIcon {
+        visibility: hidden;
+        float: left;
+        margin: 3px 6px 3px 0;
+
+        &_favorited {
+            visibility: visible;
+            background-image: url('@{current-url}/star_yellow_16px.svg');
+        }
+    }
+
+    &:hover {
+        .eaNetworkExplorer-wLimitedListItem-favoriteIcon {
+            visibility: visible;
+        }
+    }
+}

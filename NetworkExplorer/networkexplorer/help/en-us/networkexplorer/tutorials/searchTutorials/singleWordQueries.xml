@@ -1,0 +1,67 @@
+<task id="NetworkExplorer-SingleWordQueries">
+    <title>Search Single Word Query</title>
+    <taskbody>
+        <prereq>
+            <p>
+                You have appropriate access rights to search in Network Explorer. See
+                <xref href="../../prerequisites.xml" type="concept">Prerequisites</xref>
+                for user role details.
+            </p>
+        </prereq>
+        <context>
+            <p>
+                <b>Objective</b>
+            </p>
+            <p>
+                The tutorial describes the steps required to search using a single word query.
+            </p>
+            <b>Outline</b>
+            <ol>
+                <li>
+                    <xref type="task" href="#1">Enter Search Query</xref>
+                </li>
+                <li>
+                    <xref type="task" href="#2">Execute Search</xref>
+                </li>
+            </ol>
+        </context>
+        <steps>
+            <step id="1">
+                <cmd>Enter Search Query</cmd>
+                <info>
+                    <ol>
+                        <li>Launch
+                            <xref href="#networkexplorer" scope="external">Network Explorer.</xref>
+                        </li>
+                        <li>
+                            Enter required single word search criteria.
+                            Single Word Search criteria <xref href="../../ui.xml" type="concept">Syntax</xref>.
+                        </li>
+                    </ol>
+                    <p>
+                        <b>Note:</b>
+                        If naming collisions occur, the first match is used. It is advised not to name Saved Searches and Collections with the same name.
+                    </p>
+                </info>
+            </step>
+            <step id="2">
+                <cmd>Execute Search</cmd>
+                <info>
+                    <p>
+                        <ol>
+                            <li>
+                                Click
+                                <b>Search</b>
+                            </li>
+                        </ol>
+                    </p>
+                </info>
+            </step>
+        </steps>
+        <result>
+            <p>
+                The search results are displayed in the <b>Results</b> table.
+            </p>
+        </result>
+    </taskbody>
+</task>

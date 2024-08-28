@@ -1,0 +1,127 @@
+{
+  "networkexplorer-add-to-collection": {
+    "label": "Add to a Collection",
+    "launchingAction": "Launching Add to a Collection..."
+  },
+  "networkexplorer-add-topology-data": {
+    "label": "Add Topology Data",
+    "launchingAction": "Launching Add Topology Data...",
+    "objectsAdded": "Objects added ($1)",
+    "objectsAddedAndMoved": "Objects added/moved ($1)",
+    "unableToUpdate": "Unable to Update Collection",
+    "unableToUpdateForReason": "The Collection could not be updated for the following reason: ",
+    "reasonUnreachableServer": "The server may be temporarily unavailable",
+    "reasonRequestCancelled": "The request was cancelled",
+    "pressContinueTo": "Press Continue to",
+    "nodesAlreadyExist": "$1 node(s) already exist in other collections.",
+    "viewConflictNodes": "Please check them by clicking on View Conflicting Nodes button before continuing.",
+    "conflictNodes": "Conflicting Nodes",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "restrictedObjectDialogHeader": "Unable to add all selected Managed Objects"
+  },
+  "networkexplorer-move-to-collection": {
+    "label": "Move to Collection",
+    "launchingAction": "Launching Move to Collection...",
+    "objectsMoved": "Objects moved ($1)",
+    "unableToUpdate": "Unable to Move to Collection",
+    "unableToUpdateForReason": "The Collection could not be updated for the following reason: ",
+    "reasonUnreachableServer": "The server may be temporarily unavailable",
+    "reasonRequestCancelled": "The request was cancelled",
+    "reasonNumberOfNodeLimit": "Unable to move more than ($1) nodes in a single action."
+  },
+  "networkexplorer-add-object-collections": {
+    "label": "Add Topology Data",
+    "launchingAction": "Launching Add Collections...",
+    "objectsAdded": "Collections added ($1)",
+    "unableToAdd": "Unable to Add Collections",
+    "maxNumberExceeded": "Exceeded max number of collections",
+    "reasonNumberOfCollectionsLimit": "Max number of collections ($1) has been exceeded. Only ($1) collections can be added to a Topology at any one point. Try splitting up your selection and then add.",
+    "reasonUnreachableServer": "The server may be temporarily unavailable",
+    "reasonRequestCancelled": "The request was cancelled"
+  },
+  "networkexplorer-remove-from-this-collection": {
+    "label": "Remove from this Collection",
+    "launchingAction": "Launching Remove from this Collection...",
+    "objectsRemoved": "Objects removed ($1)"
+  },
+  "networkexplorer-create-nested-collection": {
+    "label": "Create Collection",
+    "customTopologyLabel": "Create Custom Topology",
+    "launchingAction": "Launching Create Collection..."
+  },
+  "networkexplorer-delete-collections": {
+    "label": "Delete",
+    "launchingAction": "Launching Delete Collection...",
+    "unableToDeleteCollection": "Unable to Delete Collections",
+    "collectionCouldNotBeDeleted": "Collection $1 could not be deleted.",
+    "unableToDeleteReferencedCollection": "Unable to remove Collection that contains a referenced Collection.",
+    "unableToCheckReferencedCollection": "Unable to check if Collection contains a referenced Collection.",
+    "deleteReferencedCollectionsFirst": "Please delete any referenced Collections first before deleting this Collection.",
+    "deleteTitle" : "Delete $1",
+    "deleteMessage" : "$1 will be permanently deleted from the system.",
+    "sureToDelete" : "Are you sure you want to delete?",
+    "bulkDeleteUnavailableBody": "Bulk delete may be temporarily unavailable during upgrade.",
+    "tryAgainLater": "Please try again later.",
+    "deleteResult": "Delete Result"
+  },
+  "networkexplorer-rename-collection": {
+    "label": "Rename",
+    "launchingAction": "Launching Rename Collection...",
+    "collectionRenamed": "Collection Renamed"
+  },
+  "networkexplorer-export-topology": {
+    "label": "Export Topology",
+    "launchingAction": "Launching Export Nested Collection...",
+    "collectionExported": "Collection Exported"
+  },
+  "networkexplorer-create-private-network": {
+    "label": "Create Private Network",
+    "launchingAction": "Launching Create Private Network..."
+  },
+  "networkexplorer-export-collection": {
+    "label": "Export Collection",
+    "launchingAction": "Launching Export Collection...",
+    "collectionExported": "Collection Exported"
+  },
+  "networkexplorer-remove-leaf-collection": {
+    "label": "Remove from Collection",
+    "launchingAction": "Launching Remove Collection...",
+    "confirmHeader": "Remove $1",
+    "confirmContent": "Removing a collection will remove it from the parent collection but it will still be available in the system.",
+    "confirmButton": "Remove",
+    "sureToRemove": "Are you sure you want to remove?",
+    "collectionsRemoved": "Collections Removed ($1)",
+    "unableToRemoveHeader": "Unable to Remove All Collections",
+    "unableToRemoveContent": "Some collections could not be removed. Please check collection names below and try again",
+    "nameColumnHeader": "Collection Name"
+  },
+  "networkexplorer-update-collection-contents": {
+    "label": "Update Contents",
+    "launchingAction": "Launching Update Contents...",
+    "updateContents": "Update Contents",
+    "keepContents": "Keep Contents",
+    "collectionSizeExceeded": "The results for the selected criteria exceed the collection limits",
+    "noResultsMessage": "The Collection criteria returned no results so the current content will be removed. Do you want to proceed?",
+    "internalServerErrorMessage": "The server encountered an internal error. Please try again or contact your System Administrator.",
+    "unauthorizedAccessErrorMessage" : "Your role does not allow you perform this operation. Contact your System Administrator to change your access rights.",
+    "accessDenied": "Access Denied",
+    "unableToUpdateContents": "Unable to Update Contents",
+    "confirmSizeEmpty": "Confirm Update Contents",
+    "collectionUpdated": "Collection Updated"
+  },
+  "networkexplorer-edit-search-criteria-collection": {
+    "flyoutLabel": "Edit Collection Criteria",
+    "launchingAction": "Launching Edit Criteria...",
+    "collectionUpdated": "Collection Updated",
+    "errors": {
+      "selectSearchCriteria": "Please select a Saved Search and try again"
+    }
+  },
+  "networkexplorer-set-to-public": {
+    "launchingAction": "Launching Set To Public...",
+    "successMessage": "Sharing permission updated successfully",
+    "errorDialogHeader": "Unable to Set to Public",
+    "browse": "Browse Collection"
+  }
+}

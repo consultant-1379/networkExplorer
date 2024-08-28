@@ -1,0 +1,10 @@
+{
+  "actionName": "networkexplorer-add-topology-data",
+  "condition": {
+    "dataType": "Collection",
+    "properties": [{
+      "name": "subType",
+      "value": "LEAF"
+    }]
+  }
+}

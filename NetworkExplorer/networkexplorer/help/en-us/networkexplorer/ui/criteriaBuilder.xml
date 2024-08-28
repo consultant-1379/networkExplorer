@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="NetworkExplorer-UserInterface-CriteriaBuilder">
+    <title>Criteria Builder</title>
+    <conbody>
+        <section>
+            <title>Overview</title>
+            <p>
+                Criteria Builder allows you to define/build criteria for searching through nodes, and managed objects using
+                a graphically represented criteria tree.
+            </p>
+
+            <p>
+                To switch to Criteria Builder, click on the <b>Switch to Criteria Builder</b> button on the right
+                side of the search box. A <b>Node Type</b> dropdown and a <b>Node Name</b> text box are displayed.
+                If you enter a query string into the search box, the query string is discarded if you switch to Criteria
+                Builder.
+                Any query results returned in the Results table, are still displayed on the screen after switching to
+                Criteria Builder.
+            </p>
+        </section>
+        <section>
+            <title>Search by Node</title>
+            <p>
+                To search for nodes, click the <b>Node Type</b> dropdown and select a node type. You can further refine your search results by providing a
+                name in the <b>Node Name</b> text field. You can only specify a single name or a partial name. Space, Comma and quote are not accepted in the node name.
+                A search using only the <b>Node Name</b> can be carried out by providing a
+                <b>Node Name</b> and leaving the <b>Node Type</b> dropdown empty. Click the <b>Search</b> button to execute your search.
+            </p>
+            <p>Note : Partial names supported examples are LTE01* and *TE01 to get accurate results. Such as LTE*01 is not supported</p>
+            <p>
+                When a node search is executed and a corresponding node exists, a Managed Object is returned to
+                represent that node. Managed Objects are returned in the following order:
+                <ol>
+                    <li>MeContext</li>
+                    <li>ManagedElement</li>
+                    <li>NetworkElement</li>
+                </ol>
+            </p>
+            <p>
+                Each node will only return a single Managed Object instance to avoid duplication. For example:
+                <ul>
+                    <li>
+                        If a node has no MeContext but has ManagedElement and NetworkElement, ManagedElement
+                        is returned, as this is the highest precedence type available.
+                    </li>
+                    <li>
+                        If a node has all three instances available, MeContext will be returned, as this is
+                        the highest precedence type available.
+                    </li>
+                </ul>
+            </p>
+        </section>
+        <section>
+            <title>Building a Managed Object Query</title>
+            <p>
+                To search for Managed Objects, first select a node type then click the <b>+ Has Child</b> button. Another dropdown
+                is displayed, with a list of Managed Object types. Select the Managed Object type you want to search for.
+                If the selected object has children, a <b>+ Has Child</b> button is displayed below the object
+                select box. To add another object, click the <b>+ Has Child</b> button.
+                Click the <b>Search</b> button to execute your search. All objects
+                included in the Criteria Builder will be displayed in the table. This will not return the Managed
+                Objects representing the nodes, unless you search for those Managed Object types specifically.
+                You can delete the object added by clicking the trash icon.
+            </p>
+        </section>
+        <section>
+            <title id="searchByChildren">Search by Children</title>
+            <p>
+                After adding a Managed Object, you can add child criteria, if the object selected has
+                children. If the selected object has children, a <b>+ Has Child</b> button is displayed below the object
+                select box. Clicking this will produce another select box that branches from the previous object. In
+                this select box, select a Managed Object. If a Managed Object (MO) has more than one
+                namespace attribute, the Managed Object name will be be repeated in the list.
+                The MO will be differentiated when you  hover the mouse over the item to display the name and namespace value in a tooltip.
+                Click the <b>Search</b> button to execute your search. All objects included in the Criteria Builder will be displayed in the table.
+            </p>
+            <p>
+                To delete a child which you have added, click the trash can icon. Deleting an object will also delete
+                child objects.
+            </p>
+            <image href="../resources/images/Mo_toolTip.png"/>
+            <p>
+                For YANG based nodes, in dropdown you will see some duplicate Managed Objects and tree structure upto
+                that Managed Object name separated by <b>|</b> symbol. When you hover the mouse cursor over the item
+                a full tree structure and namespace of that Managed Object is displayed in tooltip. After selection of item, it is displayed with $$ in between in textbox.
+            </p>
+            <image href="../resources/images/MOtooltip.png"/>
+            <p>
+                <b>Note:</b> Some child Managed Object types in the dropdown list might be disabled. This can occur where
+                a child Managed Object is incompatible with any of its parents due to the parent having different namespace versions.
+                Child Managed Objects are filtered out and disabled where the namespace versions are
+                different to its parent Managed Object.
+                If this occurs the Managed Object types are colored grey. It is not be possible to select them
+                from the dropdown options.
+                An example of a Managed Object with disabled child nodes is ManagedElement for the node type MINI-LINK-Indoor.
+            </p>
+        </section>
+        <section>
+            <title>Search by Attributes</title>
+            <p>
+                Attribute criteria can be added to a Managed Object. Click <b>+ Add Criteria</b> button and select
+                an attribute in the first dropdown displayed. The default comparator is set to <b>Any Value</b>. This will
+                add an additional column to the results. This shows the value of the specified attribute for each result.
+                If you select a comparator value, an additional input field or select box is presented. This narrows the
+                search results to a more specific set.
+            </p>
+            <image href="../resources/images/attributeCriteria.png"/>
+            <p>
+                Searching by attributes also supports the wildcard operator at the start and/or end of the
+                attribute value. For example, if you wanted all EUtranCellFDD objects with a EUtranCellFDDId that starts with
+                "Cell", you would put Cell* in the attribute input box. There is a maximum of 3 wildcard value searches
+                supported per search execution. Using more than 3 wildcards will result in slower queries, and less
+                specific search results. Click the <b>Done</b> button to enable the <b>Search</b> button.
+            </p>
+            <p>
+                For YANG based nodes, there may be duplicate ENUM members for some attributes. Duplicate ENUM members belonging
+                to different namespace are distinguished when you hover mouse cursor over the item description and namespace
+                is displayed in tooltip.
+            </p>
+            <image href="../resources/images/attribute_tooltip.PNG"/>
+            <p>
+                Once you click on <b>Done</b> button, attribute and selected value are displayed below textbox. This text has namespace as prefix to selected value.
+            </p>
+            <image href="../resources/images/selected_duplicate_enum.png" />
+            <p>
+                Click the search button to execute the search. You can modify existing criteria by clicking
+                <b>+ Add/Edit Criteria</b> button on the managed object.
+            </p>
+            <p>
+                <b>Note:</b> If different versions of Managed Objects have different attributes, they are all listed in Criteria Builder.
+                Search results will only be returned for Managed Object versions that have the selected attribute(s).
+            </p>
+        </section>
+        <section>
+            <title>Search by Enum List Attributes</title>
+            <p>
+                To add a criteria attribute to a managed object click <b>+ Add Criteria</b> button and select
+                an attribute from the first dropdown displayed. The default comparator is set to <b>Any Value</b>. Changing the comparator to either <b>Contains Any Of</b> or <b>Contains All Of</b>
+                adds an additional multi-value select box. This allows for the selection of more than one value. This also narrows the
+                search results to a more specific set.
+                Click the <b>Done</b> button to enable the <b>Search</b> button.
+            </p>
+            <image href="../resources/images/listCriteriaAttribute.png"/>
+        </section>
+        <section>
+            <title>Search by Boolean List Attributes</title>
+            <p>
+                To add a criteria attribute to a managed object click <b>+ Add Criteria</b> button and select
+                an attribute from the first dropdown displayed. The default comparator is set to <b>Any Value</b>. Change the comparator to either <b>Contains Any Of</b> or <b>Contains All Of</b>
+                to add an additional multi-value select box. This allows for the selection of more than one value. This also narrows the search results to a more specific set.
+                Click the <b>Done</b> button to enable the <b>Search</b> button.
+            </p>
+            <image href="../resources/images/BooleanListCriteriaAttributes.png"/>
+        </section>
+        <section>
+            <title>Search by Primitive List Attributes</title>
+            <p>
+                To add a criteria attribute to a managed object click <b>+ Add Criteria</b> button and select
+                an attribute from the first dropdown displayed. The default comparator is set to <b>Any Value</b>. Change the comparator to either <b>Contains Any Of</b> or <b>Contains All Of</b>
+                to add an input field. This field allows for the creation of Values for each of the user-inputted values.
+                This is done by typing a value and then pressing the enter key.
+                This also narrows the search results to a more specific set.
+            </p>
+            <image href="../resources/images/primitiveListCriteriaAttributes.png"/>
+            <p>
+                Search by primitive list attributes to query more than one value. A new Pill is required for
+                each value that needs to be queried.
+                Click the <b>Done</b> button to enable the <b>Search</b> button.
+            </p>
+        </section>
+        <section>
+            <title>Search by Struct Attributes</title>
+            <p>
+                To add a criteria attribute to a managed object click <b>+ Add Criteria</b> button and select
+                an struct attribute from the first dropdown displayed. You can then select a child attribute under the struct attribute in the second dropdown.
+                When the child attribute is selected, the default comparator is set to <b>Any Value</b>.
+                If you select a comparator value, an additional input field or select box is displayed.
+                This narrows the search results to a more specific set.
+                Click the <b>Done</b> button to enable the <b>Search</b> button.
+            </p>
+            <image href="../resources/images/structCriteriaAttribute.png"/>
+        </section>
+        <section>
+            <title>Search by Multiple Attributes</title>
+            <p>
+                Click <b>Add More Criteria</b>, to add more attribute criteria to the object (each criteria may be of a
+                different attribute type). You can either use the "and" conjunction or the "or" conjunction to chain
+                together your attributes. The default is "and". For example, if you added attributes ENodeBFunctionId
+                and eNBId to Managed Object ENodeBFunction using the "and" conjunction it would produce a query similar
+                to the following:
+            </p>
+            <ul>
+                <li>
+                    <i>
+                        select all objects of type ENodeBFunction where ENodeBFunction has attr ENodeBFunctionId = id
+                        <b>and</b> attr eNBId = 50 from node type ERBS
+                    </i>
+                </li>
+            </ul>
+            <p>
+                The results would then show all instances of ENodeBFunction where ENodeBFunctionId = id <b>AND</b> eNBId = 50.
+                If you added ENodeBFunctionId and eNBId to ENodeBFunction using the "or" conjunction it would produce
+                a query similar to the following:
+            </p>
+            <ul>
+                <li>
+                    <i>
+                        select all objects of type ENodeBFunction where ENodeBFunction has attr ENodeBFunctionId = id
+                        <b>or</b> attr eNBId = 50 from node type ERBS
+                    </i>
+                </li>
+            </ul>
+            <p>
+                The results would then show any instance of ENodeBFunction where ENodeBFunctionId = id <b>OR</b> eNBId = 50
+            </p>
+            <p>
+                Attributes with "Any Value" set cannot use the "or" conjunction. The attribute column for dscpLabel
+                is displayed in the results table. The number of results returned is not affected.
+            </p>
+            <p>
+                <b>Note:</b> A maximum of two attributes with the "or" conjunction is allowed per query.
+            </p>
+        </section>
+        <section>
+            <title>Show or Hide Objects in Results Table</title>
+            <p>
+                By default, objects added using Criteria Builder will be shown in the results table.
+                To hide these objects from your results, click the eye icon next to the object. The icon changes to
+                an eye with a line through it to indicate that the object is hidden from the results table. To
+                display these objects in your results again, click the eye icon with the line through it. Click the <b>Search</b>
+                button to update the Results table. Any criteria you have selected for an object is displayed in the
+                results table. At least one object must be selected before you can execute a query.
+            </p>
+        </section>
+        <section>
+            <title>Switch Back to Search</title>
+            <p>
+                You can switch from Criteria Builder to regular search at any time. To make this switch,
+                click the <b>Switch to Search Box</b> button located next to the <b>Search</b> button. If Criteria Builder
+                has valid criteria added, the search box will be populated with the query built in the Criteria Builder.
+            </p>
+            <p>
+                Query results returned as a result of executing Criteria Builder search will remain on the screen after
+                switching back to the search box.
+            </p>
+        </section>
+        <section>
+            <title>Delete Criteria</title>
+            <p>
+                To delete criteria added to an object, click the <b>+ Add/Edit Criteria</b> button and click the trash
+                can icon next to the criteria you want to delete.
+            </p>
+        </section>
+        <section>
+            <title>Clear Criteria Builder</title>
+            <p>
+                To clear all criteria from Criteria Builder, click the <b>Clear Query</b> button in the top right corner
+                of Criteria Builder.
+            </p>
+        </section>
+        <section>
+            <title>Compatibility</title>
+            <p>
+                Not all Managed Objects and criteria attributes are compatible. If Managed Objects or attributes
+                lower in the Criteria Builder are incompatible with ones higher up, then the tree hierarchy is
+                updated accordingly.
+            </p>
+        </section>
+    </conbody>
+</concept>

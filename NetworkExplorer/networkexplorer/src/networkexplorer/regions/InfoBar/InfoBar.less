@@ -1,0 +1,63 @@
+.eaNetworkExplorer-rInfoBar {
+    &-info, &-defaultHeader {
+        width: 100%;
+        line-height: 24px;
+
+        &_hidden {
+            display: none;
+        }
+    }
+
+    &-separator {
+        border-left: 1px solid #ccc;
+        height: 2.4rem;
+        float: right;
+
+        &_hidden {
+            display: none;
+        }
+    }
+
+    &-ellipsis {
+        vertical-align: bottom;
+        display: inline-block;
+        max-width: 80%;
+        text-overflow: ellipsis;
+        white-space: pre;
+        overflow: hidden;
+    }
+
+    &-infoTypeWrapper {
+        color: #999;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        margin-right: 5px;
+        display: inline;
+        &_hidden {
+            display: none;
+        }
+    }
+
+    &-closeCollection {
+        float: right;
+        margin: 0 9px;
+
+        &_hidden {
+            display: none;
+        }
+    }
+
+    &-favoriteIcon {
+        float: right;
+        margin: 0 6px;
+        padding-top: 5px;
+
+        &_favorited {
+            background-image: url('@{current-url}/star_yellow_16px.svg');
+        }
+
+        &_hidden {
+            display: none;
+        }
+    }
+}

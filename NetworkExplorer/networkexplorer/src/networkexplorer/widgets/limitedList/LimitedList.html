@@ -1,0 +1,20 @@
+<div class="eaNetworkExplorer-wLimitedList">
+    {{#if title}}
+    <h3 class="eaNetworkExplorer-wLimitedList-header">
+        <span class="eaNetworkExplorer-wLimitedList-headerText">{{ title }}</span>
+        <span class="eaNetworkExplorer-wLimitedList-loadingAnimation">
+            <span class="ebLoader ebLoader-Dots ebLoader-Dots_size_small"></span>
+        </span>
+    </h3>
+    {{/if}}
+    
+
+    <div class="eaNetworkExplorer-wLimitedList-collectionList">
+        <ul class="eaNetworkExplorer-wLimitedList-topList">
+        </ul>
+        {{! only output ViewAll Button if ViewAllButton var is set to true }}
+        {{#if showViewAllButton}}
+        <a href="{{ viewAllUrl }}" class="eaNetworkExplorer-wLimitedList-showMore">{{ strings.viewAll }}</a>
+        {{/if}}
+    </div>
+</div>

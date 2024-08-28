@@ -1,0 +1,22 @@
+<concept id="NetworkExplorer-searchForSubNetworkManagedObjectTypes">
+    <title>Searching for SubNetwork Managed Object Types</title>
+    <conbody>
+        <section>
+            <p>
+                The SubNetwork provides a flexible way to define a network topology. A top most parent SubNetwork
+                instance can also have a SubNetwork child and a SubNetwork grandchild, therefore 3 tiers of SubNetwork
+                are possible.
+            </p>
+            <p>
+                Network Explorer provides the following syntax to allow a user to assemble
+                a query describing all three layers:
+            </p>
+            <codeblock>
+                <b>SubNetwork</b> where object <b>SubNetwork</b> has child MeContext
+            </codeblock>
+            <p>
+                SubNetwork syntax in Criteria Builder follows the same pattern as the above.
+            </p>
+        </section>
+    </conbody>
+</concept>

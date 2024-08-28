@@ -1,0 +1,25 @@
+<concept id="NetworkExplorer-searchForManagedObjectsInCollectionSavedSearchWithSpaces">
+    <title>Search for a Saved Search or Collection with Spaces in the Name.</title>
+    <conbody>
+        <section>
+            <p>
+                When searching for a Saved Search or Collection with a name that contains spaces, you must enclose the
+                Saved Search or Collection name in double quotes. For example:
+            </p>
+            <codeblock>
+                select MeContext from search "saved search with spaces"
+            </codeblock>
+            <p>
+                When an entire search query is wrapped in double quotes, this will attempt to return a Collection with a
+                name matching the query.
+            </p>
+            <p>
+                If a Collection is not found it will attempt to return a Saved Search.
+            </p>
+            <p>
+                If neither a Collection or a Saved Search is found, the query will be parsed as a normal search query.
+            </p>
+
+        </section>
+    </conbody>
+</concept>

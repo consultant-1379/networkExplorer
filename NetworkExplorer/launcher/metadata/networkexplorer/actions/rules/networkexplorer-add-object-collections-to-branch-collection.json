@@ -1,0 +1,10 @@
+{
+  "actionName": "networkexplorer-add-object-collections",
+  "condition": {
+    "dataType": "Collection",
+    "properties": [{
+      "name": "subType",
+      "value": "BRANCH"
+    }]
+  }
+}

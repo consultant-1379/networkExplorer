@@ -1,0 +1,10 @@
+{
+  "actionName": "networkexplorer-set-to-public",
+  "condition": {
+    "dataType": "Collection",
+    "properties": [{
+      "name": "category",
+      "value":"Private"
+    }]
+  }
+}

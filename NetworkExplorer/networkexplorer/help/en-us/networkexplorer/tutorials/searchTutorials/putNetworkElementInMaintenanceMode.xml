@@ -1,0 +1,107 @@
+<task id="NetworkExplorer-PutNetworkElementInMaintenanceMode">
+    <title>Put Network Elements in Maintenance Mode</title>
+    <taskbody>
+        <prereq>
+            <ul>
+                <li>You must have the following roles:
+                    <ul>
+                        <li>Network_Explorer_Administrator</li>
+                        <li>Nedo_Administrator</li>
+                    </ul>
+                </li>
+            </ul>
+        </prereq>
+        <context>
+            <p>
+                <b>Objective</b>
+            </p>
+            <p>
+                This tutorial describes the steps required to put Network Elements in maintenance mode using Network Explorer.
+            </p>
+            <b>Outline</b>
+            <ol>
+                <li>
+                    <xref type="task" href="#1">Select Required Network Elements</xref>
+                </li>
+                <li>
+                    <xref type="task" href="#2">Edit Network Elements State</xref>
+                </li>
+                <li>
+                    <xref type="task" href="#3">Execute Changes</xref>
+                </li>
+                <li>
+                    <xref type="task" href="#4">Confirm Changes</xref>
+                </li>
+            </ol>
+        </context>
+        <steps>
+            <step id="1">
+                <cmd>Select Required  Network Elements</cmd>
+                <info>
+                    <ol>
+                        <li>
+                            Launch <xref href="#networkexplorer" scope="external">Network Explorer.</xref>
+                        </li>
+                        <li>
+                            Select the required Network Elements from the <b>Results</b> table.
+                        </li>
+                    </ol>
+                </info>
+            </step>
+            <step id="2">
+                <cmd>Edit Network Elements State</cmd>
+                <info>
+                    <ol>
+                        <li>
+                            Click <b>Edit State</b>.
+                        </li>
+                        <li>
+                            Select the <b>In Maintenance</b> radio button
+                        </li>
+                        <li>
+                            Click <b>Review Changes</b>.
+                        </li>
+                    </ol>
+                </info>
+            </step>
+            <step id="3">
+                <cmd>Execute Changes</cmd>
+                <info>
+                    <ol>
+                        <li>
+                            Verify <b>Total Nodes</b>, <b>Node Names</b> and <b>Proposed Maintenance State</b> information.
+                        </li>
+                        <li>
+                            Click <b>Execute Changes</b>.
+                        </li>
+                        <li>
+                            Wait for the <b>Operations in progress</b> to reach 100%.
+                        </li>
+                    </ol>
+                </info>
+            </step>
+            <step id="4">
+                <cmd>Confirm Changes</cmd>
+                <info>
+                    <ol>
+                        <li>
+                            When the operations in progress has reached 100%, check the following:
+                            <ul>
+                                <li>The number of failed Network Elements is zero.</li>
+                                <li>The <b>Proposed Maintenance State</b> is successfully updated.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Click <b>OK</b>.
+                        </li>
+                    </ol>
+                </info>
+            </step>
+        </steps>
+        <result>
+            <p>
+                The selected Network Element(s) are now in maintenance mode.
+            </p>
+        </result>
+    </taskbody>
+</task>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<concept id="Prerequisites">
+    <title>Prerequisites</title>
+    <conbody>
+        <p>
+            The following prerequisites apply to Network Explorer:
+        </p>
+        <section>
+            <title>Required User Roles</title>
+            <p>
+                <b>To execute searches in Network Explorer, you must have a user account with one of the following roles:</b>
+            </p>
+            <ul>
+                <li>Network_Explorer_Administrator</li>
+                <li>Network_Explorer_Operator</li>
+                <li>Custom role with Network Explorer Search capabilities (To search for Managed Objects or node names)
+                    <ul>
+                        <li><b>Resource:</b> topologySearchService, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> searchExecutor, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> modelInformationService, <b>Operation:</b> read</li>
+                    </ul>
+                </li>
+                <li>Custom role with Network Explorer Search and Collection capabilities (To search for Collections, Saved Searches, Managed Objects or node names)
+                    <ul>
+                        <li><b>Resource:</b> topologySearchService, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> searchExecutor, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> modelInformationService, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> Collections_Public, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> Collections_Private, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> SavedSearch_Public, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> SavedSearch_Private, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> CollectionsOthers_Public, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> SavedSearchOthers_Public, <b>Operation:</b> read</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>
+                <b>To create, read, update or delete Collections and Saved Searches in Network Explorer you must have a user account with one of the following roles:</b>
+            </p>
+            <ul>
+                <li>Network_Explorer_Administrator</li>
+                <li>Network_Explorer_Operator</li>
+                <li>Custom role with Collections and Saved Searches capabilities (To perform create, read, update or delete operations on Collections and Saved Searches)
+                    <ul>
+                        <li><b>Resource:</b> topologySearchService, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> searchExecutor, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> modelInformationService, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> Collections_Public, <b>Operation:</b> create</li>
+                        <li><b>Resource:</b> Collections_Private, <b>Operation:</b> create</li>
+                        <li><b>Resource:</b> SavedSearch_Public, <b>Operation:</b> create</li>
+                        <li><b>Resource:</b> SavedSearch_Private, <b>Operation:</b> create</li>
+                        <li><b>Resource:</b> Collections_Public, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> Collections_Private, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> CollectionsOthers_Private, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> CollectionsOthers_Public, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> SavedSearch_Public, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> SavedSearch_Private, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> SavedSearchOthers_Private, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> SavedSearchOthers_Public, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> Collections_Public, <b>Operation:</b> update</li>
+                        <li><b>Resource:</b> Collections_Private, <b>Operation:</b> update</li>
+                        <li><b>Resource:</b> CollectionsOthers_Public, <b>Operation:</b> update</li>
+                        <li><b>Resource:</b> CollectionsOthers_Private, <b>Operation:</b> update</li>
+                        <li><b>Resource:</b> SavedSearch_Public, <b>Operation:</b> update</li>
+                        <li><b>Resource:</b> SavedSearch_Private, <b>Operation:</b> update</li>
+                        <li><b>Resource:</b> SavedSearchOthers_Private, <b>Operation:</b> update</li>
+                        <li><b>Resource:</b> SavedSearchOthers_Public, <b>Operation:</b> update</li>
+                        <li><b>Resource:</b> Collections_Public, <b>Operation:</b> delete</li>
+                        <li><b>Resource:</b> Collections_Private, <b>Operation:</b> delete</li>
+                        <li><b>Resource:</b> CollectionsOthers_Public, <b>Operation:</b> delete</li>
+                        <li><b>Resource:</b> CollectionsOthers_Private, <b>Operation:</b> delete</li>
+                        <li><b>Resource:</b> SavedSearch_Public, <b>Operation:</b> delete</li>
+                        <li><b>Resource:</b> SavedSearch_Private, <b>Operation:</b> delete</li>
+                        <li><b>Resource:</b> SavedSearchOthers_Private, <b>Operation:</b> delete</li>
+                        <li><b>Resource:</b> SavedSearchOthers_Public, <b>Operation:</b> delete</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>
+                <b>To view an object's attributes in Network Explorer you must have a user account with one of the following roles:</b>
+            </p>
+            <ul>
+                <li>Network_Explorer_Administrator</li>
+                <li>Network_Explorer_Operator</li>
+                <li>
+                    Custom role with Network Explorer search or Collections capabilities to select an object in Network
+                    Explorer. These capabilities are listed above. You will also need the following capabilities to view
+                    attributes:
+                    <ul>
+                        <li><b>Resource:</b> modelInformationService, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> persistentobjectservice, <b>Operation:</b> read</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>
+                <b>To edit an object's attributes in Network Explorer you must have a user account with one of the following roles:</b>
+            </p>
+            <ul>
+                <li>Network_Explorer_Administrator</li>
+                <li>
+                    Custom role with Network Explorer search or Collections capabilities to select an object in Network
+                    Explorer. These capabilities are listed above. You will also need the following capabilities to view
+                    or edit attributes:
+                    <ul>
+                        <li><b>Resource:</b> modelInformationService, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> persistentobjectservice, <b>Operation:</b> read</li>
+                        <li><b>Resource:</b> persistentobjectservice, <b>Operation:</b> update</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><b>Note:</b> Refer to the <xref href="#help/app/usermanagement" scope="external">User Management User Guide</xref>
+                for instructions on creating a user/role and setting a password.</p>
+        </section>
+        <section>
+            <title>Target Based Access Control (TBAC)</title>
+            <p>
+                TBAC is an authorization mechanism that restricts access to the targets (Nodes) assigned.
+            </p>
+            <p>
+                When TBAC is enabled, only the nodes defined in the user permissions (refer to the
+                <xref href="#help/app/targetmanagement" scope="external">Target Group Management User Guide</xref> for more information) are accessible.
+                This can affect the results of searches and collections contents, causing different users to get different results based on their assigned targets.
+            </p>
+        </section>
+    </conbody>
+</concept>

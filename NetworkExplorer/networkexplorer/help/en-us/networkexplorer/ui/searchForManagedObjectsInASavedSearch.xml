@@ -1,0 +1,39 @@
+<concept id="NetworkExplorer-searchForManagedObjectsInASavedSearch">
+    <title>Searching for Managed Objects in a Saved Search</title>
+    <conbody>
+        <section>
+            <p>
+                To return objects that exist in specific Saved Searches, you can specify the type and Saved Search name
+                using the following syntax, replacing [TYPE] and [SEARCH_NAME] with the desired values:
+            </p>
+            <codeblock>
+                [TYPE] from search [SEARCH_NAME]
+            </codeblock>
+            <p>
+                For example - to get all EUtranCellFDD from a Saved Search named locked_cells:
+            </p>
+            <codeblock>
+                EUtranCellFDD <b>from search</b> locked_cells
+            </codeblock>
+            <p>
+                You can also use different attribute conditions with the search syntax, like the following:
+            </p>
+            <codeblock>
+                [TYPE] from search [SEARCH_NAME] where [ATTRIBUTE_NAME] [OPERATOR] [ATTRIBUTE_VALUE]
+            </codeblock>
+            <codeblock>
+                ENodeBFunction <b>from search</b> dublin_city_center_nodes <b>where</b> eNBId <b>&gt;=</b> 506
+            </codeblock>
+            <p>
+                A Saved Search name containing spaces or special characters should be enclosed within double quotes.
+            </p>
+            <p>
+                For example - to view a Saved Search called locked cells:
+            </p>
+            <codeblock>
+                select search <b>"locked cells"</b>
+            </codeblock>
+        </section>
+    </conbody>
+</concept>
+

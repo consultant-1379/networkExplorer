@@ -1,0 +1,67 @@
+<div class="eaNetworkExplorer-rSlidingMenu">
+    {{! Placeholders to ensure right order is retained upon asynchronous attachment of the Widget }}
+    <div class="eaNetworkExplorer-rSlidingMenu-collectionList">
+        <h4 class="eaNetworkExplorer-rSlidingMenu-collectionList-header">
+            <span class="eaNetworkExplorer-wLimitedList-headerText"> {{ strings.collections }} </span>
+                <span class="eaNetworkExplorer-rSlidingMenu-collectionList-loadingAnimation">
+                    <span class="ebLoader ebLoader-Dots ebLoader-Dots_size_small"></span>
+                </span>
+        </h4>
+
+        <div class="eaNetworkExplorer-rSlidingMenu-collectionList-collections"></div>
+
+        <div class="eaNetworkExplorer-rSlidingMenu-collectionList-errorMessage eaNetworkExplorer-rSlidingMenu-collectionList-errorMessage_hidden">
+            <i class="ebIcon ebIcon_error eaNetworkExplorer-rSlidingMenu-collectionList-errorMessage-errorIcon"></i>
+            <div class="eaNetworkExplorer-rSlidingMenu-collectionList-errorMessage-body">
+                <h4>
+                    <span class="eaNetworkExplorer-rSlidingMenu-collectionList-errorMessageHeader"></span>
+                </h4>
+                <p class="eaNetworkExplorer-rSlidingMenu-collectionList-errorMessageParagraph ebText_alternative"></p>
+            </div>
+        </div>
+    </div>
+    <div class="eaNetworkExplorer-rSlidingMenu-savedSearchesList">
+        <h4 class="eaNetworkExplorer-rSlidingMenu-savedSearchesList-header">
+            <span class="eaNetworkExplorer-wLimitedList-headerText"> {{ strings.savedSearches }} </span>
+                <span class="eaNetworkExplorer-rSlidingMenu-savedSearchesList-loadingAnimation">
+                    <span class="ebLoader ebLoader-Dots ebLoader-Dots_size_small"></span>
+                </span>
+        </h4>
+
+        <div class="eaNetworkExplorer-rSlidingMenu-savedSearchesList-savedSearches"></div>
+
+        <div class="eaNetworkExplorer-rSlidingMenu-savedSearchesList-errorMessage eaNetworkExplorer-rSlidingMenu-savedSearchesList-errorMessage_hidden ">
+            <i class="ebIcon ebIcon_error eaNetworkExplorer-rSlidingMenu-savedSearchesList-errorMessage-errorIcon"></i>
+            <div class="eaNetworkExplorer-rSlidingMenu-savedSearchesList-errorMessage-body">
+                <h4>
+                    <span class="eaNetworkExplorer-rSlidingMenu-savedSearchesList-errorMessageHeader"></span>
+                </h4>
+                <p class="eaNetworkExplorer-rSlidingMenu-savedSearchesList-errorMessageParagraph ebText_alternative"></p>
+            </div>
+        </div>
+    </div>
+    <div class="eaNetworkExplorer-rSlidingMenu-favoritesLists">
+        <h4 class="eaNetworkExplorer-rSlidingMenu-favoritesLists-header">
+            <span class="eaNetworkExplorer-wLimitedList-headerText"> {{ strings.favorites }} </span>
+                            <span class="eaNetworkExplorer-rSlidingMenu-favoritesLists-loadingAnimation">
+                            <span class="ebLoader ebLoader-Dots ebLoader-Dots_size_small"></span>
+                            </span>
+        </h4>
+
+        <i class="eaNetworkExplorer-rSlidingMenu-favoritesLists-starIcon eaNetworkExplorer-rSlidingMenu-favoritesLists-starIcon_hidden ebIcon ebIcon_star"></i>
+
+        <p class="eaNetworkExplorer-rSlidingMenu-favoritesLists-placeholderText eaNetworkExplorer-rSlidingMenu-favoritesLists-placeholderText_hidden ebText_alternative">
+            {{ strings.favoritesPlaceholderText }}</p>
+
+        <div class="eaNetworkExplorer-rSlidingMenu-favoritesLists-collections eaNetworkExplorer-rSlidingMenu-favoritesLists-collections_hidden">
+            <span class="eaNetworkExplorer-rSlidingMenu-favoritesLists-collectionsHeader ebText_alternative">{{ strings.collections }}</span>
+
+            <div class="eaNetworkExplorer-rSlidingMenu-favoritesLists-collectionsList"></div>
+        </div>
+        <div class="eaNetworkExplorer-rSlidingMenu-favoritesLists-savedSearches eaNetworkExplorer-rSlidingMenu-favoritesLists-savedSearches_hidden">
+            <span class="eaNetworkExplorer-rSlidingMenu-favoritesLists-savedSearchesHeader ebText_alternative">{{ strings.savedSearches }}</span>
+
+            <div class="eaNetworkExplorer-rSlidingMenu-favoritesLists-savedSearchesList"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map>
+    <topicref href="overview.xml" navtitle="Overview" type="concept"/>
+    <topicref href="prerequisites.xml" navtitle="Prerequisites" type="concept"/>
+    <topicref href="ui.xml" navtitle="User Interface" type="concept" outputclass="landingpage">
+        <topicref href="ui/search.xml" navtitle="Searching in Network Explorer" />
+        <topicref href="ui/results.xml" navtitle="Results" />
+        <topicref href="ui/criteriaBuilder.xml" navtitle="Criteria Builder" />
+        <topicref href="ui/collections.xml" navtitle="Collections" />
+        <topicref href="ui/savedSearches.xml" navtitle="Saved Searches" />
+    </topicref>
+    <topicref href="tutorials.xml" navtitle="Tutorials" type="concept" outputclass="landingpage">
+        <topicref href="tutorials/searchTutorials/searchForManagedObjectsUsingSearchField.xml" navtitle="Search for Managed Objects using the Search Field" />
+        <topicref href="tutorials/searchTutorials/searchForManagedObjectsUsingCriteriaBuilder.xml" navtitle="Search for Managed Objects using Criteria Builder" />
+        <topicref href="tutorials/searchTutorials/singleWordQueries.xml" navtitle="Search using a Single Word Query" />
+        <topicref href="tutorials/searchTutorials/launchApplicationFromNetworkExplorer.xml" navtitle="Launch an Application from Network Explorer" />
+        <topicref href="tutorials/searchTutorials/putNetworkElementInMaintenanceMode.xml" navtitle="Put Network Element(s) in Maintenance Mode" />
+        <topicref href="tutorials/collectionsTutorials/collectionsFromSearchResults.xml" navtitle="Add a Managed Object(s) to a Collection from Search Results" />
+        <topicref href="tutorials/collectionsTutorials/removeObjectFromCollection.xml" navtitle="Remove an Object from a Collection" />
+        <topicref href="tutorials/collections.xml" navtitle="Manage Collections" />
+        <topicref href="tutorials/createAndFavoriteSavedSearch.xml" navtitle="Create and Favorite a Saved Search" />
+        <topicref href="tutorials/savedSearches.xml" navtitle="Manage Saved Searches" />
+        <topicref href="tutorials/workingWithAttributes.xml" navtitle="Viewing and editing a Network Object's attributes" />
+    </topicref>
+    <topicref href="troubleshooting.xml" navtitle="Troubleshooting" type="concept"/>
+    <topicref href="about.xml" navtitle="About" type="concept"/>
+</map>
